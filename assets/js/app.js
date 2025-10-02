@@ -8,31 +8,33 @@ fetch("includes/footer.html")
 
 // gestion des pages à partir des paramètres categorie et page
 const params = new URLSearchParams(window.location.search);
-const cat = params.get("cat");
-const page = params.get("page");
+let cat = params.get("cat");
+let page = params.get("page");
 
 let path = "";
 
 // Récupérer la racine du repo (ex: "/tuto/")
 const basePath = window.location.pathname.replace(/\/[^\/]*$/, "/");
 
+// Si aucune page spécifiée, on charge "home.html" par défaut
 if (!page) {
-	document.getElementById("content").innerHTML = `
-					<h1>Bienvenue !</h1>
-					<p>Choisissez une catégorie d'astuces ci-dessus.</p>
-				`;
-} else {
-	if (cat) {
-		path = `${basePath}content/articles/${cat}/${page}.html`;
-	} else {
-		path = `${basePath}content/${page}.html`;
-	}
-
-	fetch(path)
-		.then((r) => {
-			if (!r.ok) throw new Error("Page introuvable");
-			return r.text();
-		})
-		.then((html) => (content.innerHTML = html))
-		.catch(() => (content.innerHTML = `<p>❌ Cette page n'existe pas.</p>`));
+	page = "home";
 }
+
+// Construction du chemin selon cat/page
+if (cat) {
+	path = `${basePath}content/articles/${cat}/${page}.html`;
+} else {
+	path = `${basePath}content/${page}.html`;
+}
+
+// Chargement de la page
+fetch(path)
+	.then((r) => {
+		if (!r.ok) throw new Error("Page introuvable");
+		return r.text();
+	})
+	.then((html) => (content.innerHTML = html))
+	.catch(() => {
+		content.innerHTML = `<p>❌ Cette page n'existe pas.</p>`;
+	});
