@@ -1,40 +1,67 @@
-// Charger le header et footer
-fetch("includes/header.html")
-	.then((r) => r.text())
-	.then((html) => (header.innerHTML = html));
-fetch("includes/footer.html")
-	.then((r) => r.text())
-	.then((html) => (footer.innerHTML = html));
+// --------------------------
+// Rendu principal
+// --------------------------
 
-// gestion des pages à partir des paramètres categorie et page
-const params = new URLSearchParams(window.location.search);
-let cat = params.get("cat");
-let page = params.get("page");
+document.addEventListener("DOMContentLoaded", () => {
+	loadLayout();
+	loadPageContent();
+});
 
-let path = "";
+// --------------------------
+// Chargement header/footer
+// --------------------------
 
-// Récupérer la racine du repo (ex: "/tuto/")
-const basePath = window.location.pathname.replace(/\/[^\/]*$/, "/");
-
-// Si aucune page spécifiée, on charge "home.html" par défaut
-if (!page) {
-	page = "home";
+function loadLayout() {
+	loadPartial("includes/header.html", document.getElementById("header"));
+	loadPartial("includes/footer.html", document.getElementById("footer"));
 }
 
-// Construction du chemin selon cat/page
-if (cat) {
-	path = `${basePath}content/articles/${cat}/${page}.html`;
-} else {
-	path = `${basePath}content/${page}.html`;
+function loadPartial(url, targetElement) {
+	fetch(url)
+		.then((r) => r.text())
+		.then((html) => (targetElement.innerHTML = html))
+		.catch(() => {
+			console.warn(`❌ Échec du chargement de : ${url}`);
+		});
 }
 
-// Chargement de la page
-fetch(path)
-	.then((r) => {
-		if (!r.ok) throw new Error("Page introuvable");
-		return r.text();
-	})
-	.then((html) => (content.innerHTML = html))
-	.catch(() => {
-		content.innerHTML = `<p>❌ Cette page n'existe pas.</p>`;
-	});
+// --------------------------
+// Chargement du contenu principal
+// --------------------------
+
+function loadPageContent() {
+	const { cat, page } = getUrlParams();
+	const content = document.getElementById("content");
+	const basePath = getBasePath();
+	const pageName = page || "home";
+
+	const path = cat ? `${basePath}content/articles/${cat}/${pageName}.html` : `${basePath}content/${pageName}.html`;
+
+	fetch(path)
+		.then((r) => {
+			if (!r.ok) throw new Error("Page introuvable");
+			return r.text();
+		})
+		.then((html) => {
+			content.innerHTML = html;
+		})
+		.catch(() => {
+			content.innerHTML = `<p>❌ Cette page n'existe pas.</p>`;
+		});
+}
+
+// --------------------------
+// Helpers
+// --------------------------
+
+function getUrlParams() {
+	const params = new URLSearchParams(window.location.search);
+	return {
+		cat: params.get("cat"),
+		page: params.get("page"),
+	};
+}
+
+function getBasePath() {
+	return window.location.pathname.replace(/\/[^\/]*$/, "/");
+}
