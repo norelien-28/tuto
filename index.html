@@ -30,6 +30,9 @@
 
 			let path = "";
 
+			// Récupérer la racine du repo (ex: "/tuto/")
+			const basePath = window.location.pathname.replace(/\/[^\/]*$/, "/");
+
 			if (!page) {
 				document.getElementById("content").innerHTML = `
 					<h1>Bienvenue !</h1>
@@ -37,9 +40,9 @@
 				`;
 			} else {
 				if (cat) {
-					path = `content/articles/${cat}/${page}.html`;
+					path = `${basePath}content/articles/${cat}/${page}.html`;
 				} else {
-					path = `content/${page}.html`;
+					path = `${basePath}content/${page}.html`;
 				}
 
 				fetch(path)
