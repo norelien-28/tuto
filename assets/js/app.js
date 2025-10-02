@@ -24,10 +24,16 @@ async function init() {
 // Chargement header/footer
 // --------------------------
 
-function loadLayout() {
-	console.log(HEADER_SELECTOR);
-	loadPartial("includes/header.html", document.querySelector(HEADER_SELECTOR));
-	loadPartial("includes/footer.html", document.querySelector(FOOTER_SELECTOR));
+async function loadLayout() {
+	await loadPartial("includes/header.html", document.querySelector(HEADER_SELECTOR));
+	await loadPartial("includes/footer.html", document.querySelector(FOOTER_SELECTOR));
+
+	// Une fois le header chargé, on génère le menu
+	if (typeof generateMenu === "function") {
+		generateMenu();
+	} else {
+		console.warn("⚠️ generateMenu() n'est pas défini");
+	}
 }
 
 async function loadPartial(url, targetElement) {
