@@ -44,10 +44,35 @@ function loadPageContent() {
 		})
 		.then((html) => {
 			content.innerHTML = html;
+			updatePageTitle({ cat, page: pageName, html });
 		})
 		.catch(() => {
 			content.innerHTML = `<p>❌ Cette page n'existe pas.</p>`;
+			document.title = "Page introuvable - NorelWeb";
 		});
+}
+
+// Mise à jour du titre de la page selon contenu
+function updatePageTitle({ cat, page, html }) {
+	const siteName = "NorelWeb";
+
+	// Page d'accueil
+	if (page === "home" && !cat) {
+		document.title = `Accueil - ${siteName}`;
+		return;
+	}
+
+	// Extraire un titre depuis le <h1> du contenu
+	const h1Match = html.match(/<h1[^>]*>(.*?)<\/h1>/i);
+	const h1Text = h1Match ? h1Match[1].trim() : null;
+
+	if (h1Text) {
+		document.title = `${h1Text} - ${siteName}`;
+	} else if (cat) {
+		document.title = `${cat} / ${page} - ${siteName}`;
+	} else {
+		document.title = `${page} - ${siteName}`;
+	}
 }
 
 // --------------------------
