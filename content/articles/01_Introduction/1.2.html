@@ -1,0 +1,445 @@
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+	<h1 data-start="253" data-end="292">1.2 - Environnements de développement</h1>
+	<h2 data-start="294" data-end="309">Introduction</h2>
+	<p data-start="310" data-end="623">
+		Un <strong data-start="313" data-end="347">environnement de développement</strong> est un ensemble d'outils et de ressources utilisés par les
+		développeurs pour écrire, tester, déboguer et exécuter des programmes. Ce tutoriel explique ce qu'est un environnement de développement, pourquoi il est
+		essentiel pour les développeurs, et comment configurer le sien.
+	</p>
+	<hr data-start="625" data-end="628" />
+	<h2 data-start="630" data-end="684">1. Qu'est-ce qu'un environnement de développement ?</h2>
+	<p data-start="685" data-end="1059">
+		Un environnement de développement est une configuration qui inclut tous les outils nécessaires pour créer un programme. Il permet de coder, compiler (ou
+		interpréter), tester, déboguer et déployer des applications. Cela inclut des logiciels comme des éditeurs de texte, des systèmes de gestion de versions,
+		des compilateurs, des interprètes et des plateformes de déploiement.
+	</p>
+	<h3 data-start="1061" data-end="1089">Types d'environnements :</h3>
+	<ul data-start="1090" data-end="1607">
+		<li data-start="1090" data-end="1233">
+			<p data-start="1092" data-end="1233">
+				<strong data-start="1092" data-end="1115">Environnement local</strong> : C’est l’environnement sur ton propre ordinateur, où tu installes tous
+				les outils nécessaires pour le développement.
+			</p>
+		</li>
+		<li data-start="1234" data-end="1455">
+			<p data-start="1236" data-end="1455">
+				<strong data-start="1236" data-end="1261">Environnement virtuel</strong> : Utilisé pour créer des environnements isolés pour éviter les conflits
+				entre les projets. Par exemple, en Python, on peut créer un environnement virtuel pour gérer les dépendances d'un projet.
+			</p>
+		</li>
+		<li data-start="1456" data-end="1607">
+			<p data-start="1458" data-end="1607">
+				<strong data-start="1458" data-end="1489">Environnement de production</strong> : C’est l’environnement où ton application ou ton service est
+				déployé pour être utilisé par les utilisateurs finaux.
+			</p>
+		</li>
+	</ul>
+	<hr data-start="1609" data-end="1612" />
+	<h2 data-start="1614" data-end="1681">2. Les composants principaux d'un environnement de développement</h2>
+	<p data-start="1683" data-end="1780">Voici les composants clés que l'on retrouve généralement dans un environnement de développement :</p>
+	<h3 data-start="1782" data-end="1856">
+		a. <strong data-start="1789" data-end="1856">Éditeur de texte / IDE (Environnement de développement intégré)</strong>
+	</h3>
+	<p data-start="1857" data-end="2059">
+		Un <strong data-start="1860" data-end="1880">éditeur de texte</strong> ou un <strong data-start="1887" data-end="1894">IDE</strong> est un outil où tu
+		écris ton code. Un bon éditeur de texte ou IDE offre des fonctionnalités comme la coloration syntaxique, l'autocomplétion et le débogage intégré.
+	</p>
+	<ul data-start="2061" data-end="2492">
+		<li data-start="2061" data-end="2261">
+			<p data-start="2063" data-end="2097"><strong data-start="2063" data-end="2084">Éditeurs de texte</strong> populaires :</p>
+			<ul data-start="2100" data-end="2261">
+				<li data-start="2100" data-end="2163">
+					<p data-start="2102" data-end="2163">
+						<strong data-start="2102" data-end="2113">VS Code</strong> : Léger, personnalisable, et riche en extensions.
+					</p>
+				</li>
+				<li data-start="2166" data-end="2209">
+					<p data-start="2168" data-end="2209"><strong data-start="2168" data-end="2184">Sublime Text</strong> : Rapide et minimaliste.</p>
+				</li>
+				<li data-start="2212" data-end="2261">
+					<p data-start="2214" data-end="2261"><strong data-start="2214" data-end="2222">Atom</strong> : Éditeur open-source très extensible.</p>
+				</li>
+			</ul>
+		</li>
+		<li data-start="2263" data-end="2492">
+			<p data-start="2265" data-end="2286"><strong data-start="2265" data-end="2273">IDEs</strong> populaires :</p>
+			<ul data-start="2289" data-end="2492">
+				<li data-start="2289" data-end="2347">
+					<p data-start="2291" data-end="2347">
+						<strong data-start="2291" data-end="2302">PyCharm</strong> : Très utilisé pour le développement Python.
+					</p>
+				</li>
+				<li data-start="2350" data-end="2424">
+					<p data-start="2352" data-end="2424">
+						<strong data-start="2352" data-end="2369">IntelliJ IDEA</strong> : Un IDE complet pour Java, Kotlin et autres langages.
+					</p>
+				</li>
+				<li data-start="2427" data-end="2492">
+					<p data-start="2429" data-end="2492">
+						<strong data-start="2429" data-end="2441">WebStorm</strong> : IDE spécialisé pour le développement JavaScript.
+					</p>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<hr data-start="2494" data-end="2497" />
+	<h3 data-start="2499" data-end="2564">b. <strong data-start="2506" data-end="2564">Système de gestion de version (Version Control System)</strong></h3>
+	<p data-start="2565" data-end="2693">
+		Un <strong data-start="2568" data-end="2601">système de gestion de version</strong> est essentiel pour suivre les changements du code et collaborer avec
+		d’autres développeurs.
+	</p>
+	<ul data-start="2695" data-end="2996">
+		<li data-start="2695" data-end="2884">
+			<p data-start="2697" data-end="2884">
+				<strong data-start="2697" data-end="2704">Git</strong> : Le système de gestion de version le plus utilisé. Il permet de suivre les modifications
+				du code source et de collaborer avec d'autres via des plateformes comme GitHub ou GitLab.
+			</p>
+		</li>
+		<li data-start="2885" data-end="2996">
+			<p data-start="2887" data-end="2996">
+				<strong data-start="2887" data-end="2894">SVN</strong> (Subversion) : Moins couramment utilisé aujourd'hui mais toujours présent dans certaines
+				entreprises.
+			</p>
+		</li>
+	</ul>
+	<h3 data-start="2998" data-end="3027">Exemple de commande Git :</h3>
+	<pre
+		class="overflow-visible!"
+		data-start="3028"
+		data-end="3320"
+	><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">bash</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copier"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copier le code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-bash"><span><span>git init            </span><span><span class="hljs-comment"># Initialiser un nouveau dépôt Git</span></span><span>
+git </span><span><span class="hljs-built_in">clone</span></span><span> [url]     </span><span><span class="hljs-comment"># Cloner un projet existant</span></span><span>
+git add .           </span><span><span class="hljs-comment"># Ajouter des fichiers au suivi</span></span><span>
+git commit -m </span><span><span class="hljs-string">"Message"</span></span><span>  </span><span><span class="hljs-comment"># Enregistrer les modifications</span></span><span>
+git push            </span><span><span class="hljs-comment"># Envoyer les modifications sur le dépôt distant</span></span><span>
+</span></span></code></div></div></pre>
+	<hr data-start="3322" data-end="3325" />
+	<h3 data-start="3327" data-end="3365">c. <strong data-start="3334" data-end="3365">Compilateurs et interprètes</strong></h3>
+	<p data-start="3366" data-end="3495">
+		Certains langages nécessitent un <strong data-start="3399" data-end="3414">compilateur</strong> ou un
+		<strong data-start="3421" data-end="3435">interprète</strong> pour transformer le code source en un programme exécutable.
+	</p>
+	<ul data-start="3497" data-end="3807">
+		<li data-start="3497" data-end="3635">
+			<p data-start="3499" data-end="3635">
+				<strong data-start="3499" data-end="3515">Compilateurs</strong> : Langages comme C, C++ ou Java ont besoin d'un compilateur pour transformer le
+				code source en code binaire exécutable.
+			</p>
+		</li>
+		<li data-start="3636" data-end="3807">
+			<p data-start="3638" data-end="3807">
+				<strong data-start="3638" data-end="3653">Interprètes</strong> : Langages comme Python ou JavaScript sont interprétés, ce qui signifie que le
+				code est exécuté directement ligne par ligne par un programme d'exécution.
+			</p>
+		</li>
+	</ul>
+	<hr data-start="3809" data-end="3812" />
+	<h3 data-start="3814" data-end="3841">d. <strong data-start="3821" data-end="3841">Bases de données</strong></h3>
+	<p data-start="3842" data-end="3936">Les bases de données permettent de stocker et gérer les données utilisées par ton application.</p>
+	<ul data-start="3938" data-end="4211">
+		<li data-start="3938" data-end="4072">
+			<p data-start="3940" data-end="4072">
+				<strong data-start="3940" data-end="3964">Bases de données SQL</strong> : Comme <strong data-start="3973" data-end="3982">MySQL</strong>,
+				<strong data-start="3984" data-end="3998">PostgreSQL</strong>, utilisées pour les données structurées (tables avec lignes et colonnes).
+			</p>
+		</li>
+		<li data-start="4073" data-end="4211">
+			<p data-start="4075" data-end="4211">
+				<strong data-start="4075" data-end="4101">Bases de données NoSQL</strong> : Comme <strong data-start="4110" data-end="4121">MongoDB</strong>,
+				<strong data-start="4123" data-end="4132">Redis</strong>, utilisées pour des données non structurées (par exemple, des documents JSON).
+			</p>
+		</li>
+	</ul>
+	<hr data-start="4213" data-end="4216" />
+	<h3 data-start="4218" data-end="4261">e. <strong data-start="4225" data-end="4261">Outils de gestion de dépendances</strong></h3>
+	<p data-start="4262" data-end="4420">
+		Les projets modernes dépendent souvent de bibliothèques externes ou de packages. Un gestionnaire de dépendances aide à installer et à gérer ces
+		bibliothèques.
+	</p>
+	<ul data-start="4422" data-end="4646">
+		<li data-start="4422" data-end="4520">
+			<p data-start="4424" data-end="4520">
+				<strong data-start="4424" data-end="4431">npm</strong> (Node Package Manager) : Utilisé pour gérer les dépendances dans les projets JavaScript.
+			</p>
+		</li>
+		<li data-start="4521" data-end="4572">
+			<p data-start="4523" data-end="4572"><strong data-start="4523" data-end="4530">pip</strong> : Le gestionnaire de paquets pour Python.</p>
+		</li>
+		<li data-start="4573" data-end="4646">
+			<p data-start="4575" data-end="4646">
+				<strong data-start="4575" data-end="4587">Composer</strong> : Utilisé pour gérer les dépendances dans les projets PHP.
+			</p>
+		</li>
+	</ul>
+	<hr data-start="4648" data-end="4651" />
+	<h2 data-start="4653" data-end="4708">3. Installer un environnement de développement local</h2>
+	<h3 data-start="4710" data-end="4760">a. <strong data-start="4717" data-end="4760">Installer un éditeur de texte ou un IDE</strong></h3>
+	<ul data-start="4761" data-end="5081">
+		<li data-start="4761" data-end="4905">
+			<p data-start="4763" data-end="4905">
+				<strong data-start="4763" data-end="4774">VS Code</strong> : Va sur
+				<a data-start="4784" data-end="4836" rel="noopener" target="_new" class="decorated-link cursor-pointer"
+					>le site de VS Code<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"
+						><svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
+							data-rtl-flip=""
+							class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"
+						>
+							<path
+								d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"
+							></path></svg></span
+				></a>
+				et télécharge la version correspondant à ton système d’exploitation.
+			</p>
+		</li>
+		<li data-start="4906" data-end="5009">
+			<p data-start="4908" data-end="5009">
+				<strong data-start="4908" data-end="4919">PyCharm</strong> : Télécharge-le depuis
+				<a data-start="4943" data-end="5008" rel="noopener" target="_new" class="decorated-link" href="https://www.jetbrains.com/pycharm/"
+					>le site officiel de PyCharm<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"
+						><svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
+							data-rtl-flip=""
+							class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"
+						>
+							<path
+								d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"
+							></path></svg></span></a
+				>.
+			</p>
+		</li>
+		<li data-start="5010" data-end="5081">
+			<p data-start="5012" data-end="5081">
+				<strong data-start="5012" data-end="5028">Sublime Text</strong> : Télécharge-le
+				<a data-start="5045" data-end="5080" rel="noopener" target="_new" class="decorated-link cursor-pointer"
+					>ici<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"
+						><svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
+							data-rtl-flip=""
+							class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"
+						>
+							<path
+								d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"
+							></path></svg></span></a
+				>.
+			</p>
+		</li>
+	</ul>
+	<h3 data-start="5083" data-end="5107">b. <strong data-start="5090" data-end="5107">Installer Git</strong></h3>
+	<ol data-start="5108" data-end="5333">
+		<li data-start="5108" data-end="5166">
+			<p data-start="5111" data-end="5166">
+				Va sur
+				<a data-start="5118" data-end="5165" rel="noopener" target="_new" class="decorated-link" href="https://git-scm.com/"
+					>le site officiel de Git<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"
+						><svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
+							data-rtl-flip=""
+							class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"
+						>
+							<path
+								d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"
+							></path></svg></span></a
+				>.
+			</p>
+		</li>
+		<li data-start="5167" data-end="5232">
+			<p data-start="5170" data-end="5232">Télécharge et installe la version correspondant à ton système.</p>
+		</li>
+		<li data-start="5233" data-end="5333">
+			<p data-start="5236" data-end="5298">Ouvre le terminal et vérifie l’installation avec la commande :</p>
+			<pre
+				class="overflow-visible!"
+				data-start="5302"
+				data-end="5333"
+			><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">bash</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copier"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copier le code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-bash"><span><span>git --version
+</span></span></code></div></div></pre>
+		</li>
+	</ol>
+	<h3 data-start="5335" data-end="5383">c. <strong data-start="5342" data-end="5383">Installer un langage de programmation</strong></h3>
+	<p data-start="5384" data-end="5530">
+		Selon le langage que tu veux utiliser (par exemple, Python, JavaScript, Java), tu devras installer l’interpréteur ou le compilateur correspondant.
+	</p>
+	<ul data-start="5532" data-end="5803">
+		<li data-start="5532" data-end="5606">
+			<p data-start="5534" data-end="5606">
+				<strong data-start="5534" data-end="5544">Python</strong> :
+				<a data-start="5547" data-end="5605" rel="noopener" target="_new" class="decorated-link" href="https://www.python.org/downloads/"
+					>Télécharge Python ici<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"
+						><svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
+							data-rtl-flip=""
+							class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"
+						>
+							<path
+								d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"
+							></path></svg></span></a
+				>.
+			</p>
+		</li>
+		<li data-start="5607" data-end="5687">
+			<p data-start="5609" data-end="5687">
+				<strong data-start="5609" data-end="5620">Node.js</strong> (pour JavaScript) :
+				<a data-start="5641" data-end="5686" rel="noopener" target="_new" class="decorated-link cursor-pointer"
+					>Télécharge Node.js ici<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"
+						><svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
+							data-rtl-flip=""
+							class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"
+						>
+							<path
+								d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"
+							></path></svg></span></a
+				>.
+			</p>
+		</li>
+		<li data-start="5688" data-end="5803">
+			<p data-start="5690" data-end="5803">
+				<strong data-start="5690" data-end="5697">JDK</strong> (pour Java) :
+				<a
+					data-start="5712"
+					data-end="5802"
+					rel="noopener"
+					target="_new"
+					class="decorated-link"
+					href="https://www.oracle.com/java/technologies/javase-jdk11-downloads.html"
+					>Télécharge JDK ici<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"
+						><svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
+							data-rtl-flip=""
+							class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"
+						>
+							<path
+								d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"
+							></path></svg></span></a
+				>.
+			</p>
+		</li>
+	</ul>
+	<hr data-start="5805" data-end="5808" />
+	<h2 data-start="5810" data-end="5854">4. Utilisation d'un environnement virtuel</h2>
+	<p data-start="5856" data-end="5985">
+		Les environnements virtuels sont très utiles pour isoler les dépendances de chaque projet afin d’éviter les conflits de versions.
+	</p>
+	<ul data-start="5987" data-end="6293">
+		<li data-start="5987" data-end="6209">
+			<p data-start="5989" data-end="6045">
+				<strong data-start="5989" data-end="5999">Python</strong> : Crée un environnement virtuel avec
+				<code data-start="6037" data-end="6043">venv</code> :
+			</p>
+			<pre
+				class="overflow-visible!"
+				data-start="6048"
+				data-end="6209"
+			><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">bash</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copier"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copier le code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-bash"><span><span>python3 -m venv mon_environnement
+</span><span><span class="hljs-built_in">source</span></span><span> mon_environnement/bin/activate  </span><span><span class="hljs-comment"># Sur Mac/Linux</span></span><span>
+mon_environnement\Scripts\activate     </span><span><span class="hljs-comment"># Sur Windows</span></span><span>
+</span></span></code></div></div></pre>
+		</li>
+		<li data-start="6210" data-end="6293">
+			<p data-start="6212" data-end="6293">
+				<strong data-start="6212" data-end="6223">Node.js</strong> : Utilise <strong data-start="6234" data-end="6241">npm</strong> pour gérer les
+				dépendances spécifiques à un projet.
+			</p>
+		</li>
+	</ul>
+	<hr data-start="6295" data-end="6298" />
+	<h2 data-start="6300" data-end="6329">5. Environnements en ligne</h2>
+	<p data-start="6331" data-end="6444">Si tu ne veux pas installer des outils localement, il existe aussi des environnements de développement en ligne :</p>
+	<ul data-start="6446" data-end="6729">
+		<li data-start="6446" data-end="6510">
+			<p data-start="6448" data-end="6510">
+				<strong data-start="6448" data-end="6458">Replit</strong> : Un IDE en ligne pour coder en plusieurs langages.
+			</p>
+		</li>
+		<li data-start="6511" data-end="6622">
+			<p data-start="6513" data-end="6622">
+				<strong data-start="6513" data-end="6534">GitHub Codespaces</strong> : Permet de coder directement sur GitHub avec une configuration d'IDE prête
+				à l'emploi.
+			</p>
+		</li>
+		<li data-start="6623" data-end="6729">
+			<p data-start="6625" data-end="6729">
+				<strong data-start="6625" data-end="6635">Glitch</strong> : Crée des applications web en ligne, avec un éditeur de texte et un serveur déjà
+				configurés.
+			</p>
+		</li>
+	</ul>
+	<hr data-start="6731" data-end="6734" />
+	<h2 data-start="6736" data-end="6752">6. Conclusion</h2>
+	<p data-start="6754" data-end="7044">
+		Un bon environnement de développement est crucial pour travailler efficacement et produire des applications de qualité. Que ce soit pour un projet
+		personnel ou professionnel, bien comprendre et configurer ton environnement te permettra de coder plus rapidement et de manière plus organisée.
+	</p>
+	<hr data-start="7046" data-end="7049" />
+	<h3 data-start="7051" data-end="7090">Suggestions d'activités pratiques :</h3>
+	<ul data-start="7091" data-end="7378">
+		<li data-start="7091" data-end="7181">
+			<p data-start="7093" data-end="7181">
+				Installe un éditeur de texte (comme <strong data-start="7129" data-end="7140">VS Code</strong>) et commence à coder un petit programme.
+			</p>
+		</li>
+		<li data-start="7182" data-end="7286">
+			<p data-start="7184" data-end="7286">Crée un dépôt Git pour un projet simple, enregistre tes premiers changements et pousse-les sur GitHub.</p>
+		</li>
+		<li data-start="7287" data-end="7378">
+			<p data-start="7289" data-end="7378">
+				Essaye d'installer un environnement virtuel Python et ajoute une bibliothèque avec <code data-start="7372" data-end="7377">pip</code>.
+			</p>
+		</li>
+	</ul>
+	<hr data-start="7380" data-end="7383" />
+	<h3 data-start="7385" data-end="7407">Points à retenir :</h3>
+	<ul data-start="7408" data-end="7725">
+		<li data-start="7408" data-end="7557">
+			<p data-start="7410" data-end="7557">
+				Un environnement de développement inclut des outils comme des éditeurs de texte, des systèmes de version, des compilateurs et des bases de
+				données.
+			</p>
+		</li>
+		<li data-start="7558" data-end="7639">
+			<p data-start="7560" data-end="7639">Git est essentiel pour la gestion de version dans tout projet de développement.</p>
+		</li>
+		<li data-start="7640" data-end="7725">
+			<p data-start="7642" data-end="7725">Les environnements virtuels permettent d’isoler les dépendances pour chaque projet.</p>
+		</li>
+	</ul>
+	<hr data-start="7727" data-end="7730" />
+	<p data-start="7732" data-end="7873">
+		<strong data-start="7732" data-end="7753">Prochaine étape :</strong><br />
+		Dans le prochain tutoriel, nous aborderons les bases de <strong data-start="7810" data-end="7818">HTML</strong>, le premier langage utilisé dans le
+		développement web.
+	</p>
+	<hr data-start="7875" data-end="7878" />
+	<p data-start="7880" data-end="8017" data-is-last-node="" data-is-only-node="">
+		Est-ce que ce modèle pour le tutoriel "Environnements de développement" te convient ? Tu veux ajuster ou ajouter des points spécifiques ?
+	</p>
+</div>

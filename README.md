@@ -76,3 +76,10 @@ Si tu veux que ton site soit directement disponible à https://<ton-utilisateur>
 - Exemple : juliendupont.github.io
 
 GitHub détecte automatiquement ce dépôt comme étant ton site personnel ou professionnel.
+
+---
+
+## lancer en local via php
+```bash
+php -S localhost:8000
+```
