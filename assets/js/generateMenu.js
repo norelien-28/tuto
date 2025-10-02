@@ -6,7 +6,8 @@ async function generateMenu() {
 	}
 
 	try {
-		const res = await fetch("../../data/articles.json");
+		const basePath = getBasePath(); // -> ex: "/tuto/"
+		const res = await fetch(`${basePath}data/articles.json`);
 		const data = await res.json();
 
 		navUl.innerHTML = ""; // reset menu
