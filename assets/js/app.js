@@ -1,64 +1,92 @@
 // --------------------------
+// Constantes et sélecteurs
+// --------------------------
+
+const SITE_NAME = "NorelWeb";
+const HEADER_SELECTOR = "#header";
+const FOOTER_SELECTOR = "#footer";
+const CONTENT_SELECTOR = "#content";
+
+// --------------------------
 // Rendu principal
 // --------------------------
 
 document.addEventListener("DOMContentLoaded", () => {
-	loadLayout();
-	loadPageContent();
+	init();
 });
+
+async function init() {
+	await loadLayout();
+	await loadPageContent();
+}
 
 // --------------------------
 // Chargement header/footer
 // --------------------------
 
 function loadLayout() {
-	loadPartial("includes/header.html", document.getElementById("header"));
-	loadPartial("includes/footer.html", document.getElementById("footer"));
+	console.log(HEADER_SELECTOR);
+	loadPartial("includes/header.html", document.querySelector(HEADER_SELECTOR));
+	loadPartial("includes/footer.html", document.querySelector(FOOTER_SELECTOR));
 }
 
-function loadPartial(url, targetElement) {
-	fetch(url)
-		.then((r) => r.text())
-		.then((html) => (targetElement.innerHTML = html))
-		.catch(() => {
-			console.warn(`❌ Échec du chargement de : ${url}`);
-		});
+async function loadPartial(url, targetElement) {
+	if (!targetElement) {
+		console.warn(`⚠️ Élément cible non trouvé pour ${url}`);
+		return;
+	}
+	try {
+		const res = await fetch(url);
+		const html = await res.text();
+		targetElement.innerHTML = html;
+	} catch (e) {
+		console.warn(`❌ Échec du chargement de : ${url}`, e);
+	}
 }
 
 // --------------------------
 // Chargement du contenu principal
 // --------------------------
 
-function loadPageContent() {
-	const { cat, page } = getUrlParams();
-	const content = document.getElementById("content");
+async function loadPageContent() {
+	const { cat, subcat, page } = getUrlParams();
+	const content = document.querySelector(CONTENT_SELECTOR);
+	if (!content) {
+		console.warn("⚠️ Élément content introuvable");
+		return;
+	}
 	const basePath = getBasePath();
 	const pageName = page || "home";
 
-	const path = cat ? `${basePath}content/articles/${cat}/${pageName}.html` : `${basePath}content/${pageName}.html`;
+	const path = buildContentPath(basePath, cat, subcat, pageName);
 
-	fetch(path)
-		.then((r) => {
-			if (!r.ok) throw new Error("Page introuvable");
-			return r.text();
-		})
-		.then((html) => {
-			content.innerHTML = html;
-			updatePageTitle({ cat, page: pageName, html });
-		})
-		.catch(() => {
-			content.innerHTML = `<p>❌ Cette page n'existe pas.</p>`;
-			document.title = "Page introuvable - NorelWeb";
-		});
+	try {
+		const res = await fetch(path);
+		if (!res.ok) throw new Error("Page introuvable");
+		const html = await res.text();
+		content.innerHTML = html;
+		updatePageTitle({ cat, subcat, page: pageName, html });
+	} catch {
+		content.innerHTML = `<p>❌ Cette page n'existe pas.</p>`;
+		document.title = `Page introuvable - ${SITE_NAME}`;
+	}
+}
+
+function buildContentPath(basePath, cat, subcat, page) {
+	if (cat && subcat) {
+		return `${basePath}content/articles/${cat}/${subcat}/${page}.html`;
+	} else if (cat) {
+		return `${basePath}content/articles/${cat}/${page}.html`;
+	} else {
+		return `${basePath}content/${page}.html`;
+	}
 }
 
 // Mise à jour du titre de la page selon contenu
-function updatePageTitle({ cat, page, html }) {
-	const siteName = "NorelWeb";
-
+function updatePageTitle({ cat, subcat, page, html }) {
 	// Page d'accueil
 	if (page === "home" && !cat) {
-		document.title = `Accueil - ${siteName}`;
+		document.title = `Accueil - ${SITE_NAME}`;
 		return;
 	}
 
@@ -67,11 +95,13 @@ function updatePageTitle({ cat, page, html }) {
 	const h1Text = h1Match ? h1Match[1].trim() : null;
 
 	if (h1Text) {
-		document.title = `${h1Text} - ${siteName}`;
+		document.title = `${h1Text} - ${SITE_NAME}`;
+	} else if (cat && subcat) {
+		document.title = `${cat} / ${subcat} / ${page} - ${SITE_NAME}`;
 	} else if (cat) {
-		document.title = `${cat} / ${page} - ${siteName}`;
+		document.title = `${cat} / ${page} - ${SITE_NAME}`;
 	} else {
-		document.title = `${page} - ${siteName}`;
+		document.title = `${page} - ${SITE_NAME}`;
 	}
 }
 
@@ -83,6 +113,7 @@ function getUrlParams() {
 	const params = new URLSearchParams(window.location.search);
 	return {
 		cat: params.get("cat"),
+		subcat: params.get("subcat"),
 		page: params.get("page"),
 	};
 }
