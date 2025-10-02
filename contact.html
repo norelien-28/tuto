@@ -6,12 +6,7 @@
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
-		<header>
-			<nav>
-				<a href="index.html">Accueil</a>
-				<a href="contact.html">Contact</a>
-			</nav>
-		</header>
+		<header id="header"></header>
 
 		<main>
 			<h1>Contactez-nous</h1>
@@ -32,8 +27,15 @@
 			</form>
 		</main>
 
-		<footer>
-			<p>&copy; 2025 Mon site</p>
-		</footer>
+		<footer id="footer"></footer>
 	</body>
+	<script>
+		// Charger le header et footer
+		fetch("header.html")
+			.then((r) => r.text())
+			.then((html) => (header.innerHTML = html));
+		fetch("footer.html")
+			.then((r) => r.text())
+			.then((html) => (footer.innerHTML = html));
+	</script>
 </html>
