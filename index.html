@@ -8,9 +8,8 @@
 	<body>
 		<header id="header"></header>
 
-		<main>
-			<h1>Bienvenue sur ma page !</h1>
-			<p>Contenu principal ici.</p>
+		<main id="content">
+			<p>Chargement...</p>
 		</main>
 
 		<footer id="footer"></footer>
@@ -23,6 +22,34 @@
 			fetch("footer.html")
 				.then((r) => r.text())
 				.then((html) => (footer.innerHTML = html));
+
+			// gestion des pages à partir des paramètres categorie et page
+			const params = new URLSearchParams(window.location.search);
+			const cat = params.get("cat");
+			const page = params.get("page");
+
+			let path = "";
+
+			if (!page) {
+				document.getElementById("content").innerHTML = `
+					<h1>Bienvenue !</h1>
+					<p>Choisissez une catégorie d'astuces ci-dessus.</p>
+				`;
+			} else {
+				if (cat) {
+					path = `../content/articles/${cat}/${page}.html`;
+				} else {
+					path = `../content/${page}.html`;
+				}
+
+				fetch(path)
+					.then((r) => {
+						if (!r.ok) throw new Error("Page introuvable");
+						return r.text();
+					})
+					.then((html) => (content.innerHTML = html))
+					.catch(() => (content.innerHTML = `<p>❌ Cette page n'existe pas.</p>`));
+			}
 		</script>
 	</body>
 </html>
