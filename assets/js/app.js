@@ -84,6 +84,7 @@ async function loadPageContent() {
 		content.innerHTML = html;
 		updatePageTitle({ cat, subcat, page: pageName, html });
 
+		await generateBreadcrumb({ cat, subcat, page: pageName });
 		await generateArticleNavigation({ cat, subcat, page: pageName });
 	} catch {
 		content.innerHTML = `<p>❌ Cette page n'existe pas.</p>`;

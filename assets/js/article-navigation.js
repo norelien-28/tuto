@@ -65,3 +65,124 @@ async function generateArticleNavigation({ cat, subcat, page }) {
 		console.warn("❌ Erreur navigation articles :", e);
 	}
 }
+
+/**
+ * Génère le fil d'Ariane stylé Bootstrap au-dessus du contenu principal
+ * en utilisant les titres du fichier articles.json.
+ *
+ * @param {Object} options
+ * @param {string} options.cat - La catégorie
+ * @param {string|null} options.subcat - La sous-catégorie (optionnel)
+ * @param {string} options.page - La page
+ */
+async function generateBreadcrumb({ cat, subcat, page }) {
+	const content = document.querySelector("#content");
+	if (!content) return;
+
+	// Conteneur breadcrumb
+	const breadcrumbContainer = document.createElement("nav");
+	breadcrumbContainer.setAttribute("aria-label", "breadcrumb");
+	breadcrumbContainer.setAttribute("class", "mb-3 border-bottom border-secondaire");
+
+	const ol = document.createElement("ol");
+	ol.className = "breadcrumb small text-secondary";
+
+	// Accueil (lien)
+	const liHome = document.createElement("li");
+	liHome.className = "breadcrumb-item";
+	const homeLink = createBreadcrumbLink("index.html?page=home", "Accueil");
+	liHome.appendChild(homeLink);
+	ol.appendChild(liHome);
+
+	try {
+		// Récupérer données articles.json
+		const basePath = getBasePath();
+		const res = await fetch(`${basePath}data/articles.json`);
+		const data = await res.json();
+
+		// Titre catégorie lisible
+		let catTitle = cat;
+		if (cat && data[cat]?.title) {
+			catTitle = data[cat].title;
+		}
+
+		// Titre sous-catégorie lisible
+		let subcatTitle = subcat;
+		if (cat && subcat && data[cat]?.subcategories?.[subcat]?.title) {
+			subcatTitle = data[cat].subcategories[subcat].title;
+		}
+
+		// Titre page lisible
+		let pageTitle = page;
+		let articlesList = [];
+
+		if (subcat && data[cat]?.subcategories?.[subcat]) {
+			articlesList = data[cat].subcategories[subcat].articles;
+		} else if (!subcat && data[cat]?.articles) {
+			articlesList = data[cat].articles;
+		}
+
+		const currentArticle = articlesList.find((a) => a.page === page);
+		if (currentArticle?.title) {
+			pageTitle = currentArticle.title;
+		}
+
+		// Catégorie (lien)
+		if (cat) {
+			const liCat = document.createElement("li");
+			liCat.className = "breadcrumb-item";
+			const catLink = createBreadcrumbLink(`index.html?cat=${cat}`, catTitle);
+			liCat.appendChild(catLink);
+			ol.appendChild(liCat);
+		}
+
+		// Sous-catégorie (lien)
+		if (subcat) {
+			const liSubcat = document.createElement("li");
+			liSubcat.className = "breadcrumb-item";
+			const subcatLink = createBreadcrumbLink(`index.html?cat=${cat}&subcat=${subcat}`, subcatTitle);
+			liSubcat.appendChild(subcatLink);
+			ol.appendChild(liSubcat);
+		}
+
+		// Page courante (non cliquable)
+		const liPage = document.createElement("li");
+		liPage.className = "breadcrumb-item active";
+		liPage.setAttribute("aria-current", "page");
+		liPage.textContent = pageTitle;
+		ol.appendChild(liPage);
+	} catch (e) {
+		console.warn("Erreur chargement articles.json pour breadcrumb", e);
+		// En cas d'erreur, on génère quand même le fil basique sans titres lisibles
+		if (cat) {
+			const liCat = document.createElement("li");
+			liCat.className = "breadcrumb-item";
+			liCat.textContent = cat;
+			ol.appendChild(liCat);
+		}
+		if (subcat) {
+			const liSubcat = document.createElement("li");
+			liSubcat.className = "breadcrumb-item";
+			liSubcat.textContent = subcat;
+			ol.appendChild(liSubcat);
+		}
+		const liPage = document.createElement("li");
+		liPage.className = "breadcrumb-item active";
+		liPage.setAttribute("aria-current", "page");
+		liPage.textContent = page;
+		ol.appendChild(liPage);
+	}
+
+	breadcrumbContainer.appendChild(ol);
+
+	// Insertion en haut du contenu
+	content.prepend(breadcrumbContainer);
+}
+
+function createBreadcrumbLink(href, textContent) {
+	const link = document.createElement("a");
+	link.href = href;
+	link.textContent = textContent;
+	link.className = "text-dark";
+	return link;
+}
