@@ -189,7 +189,7 @@ async function renderCategoryContent({ cat, subcat = null }) {
 			html += `<h1>${sub.title || subcat}</h1><ul class="list-group mb-4">`;
 			sub.articles.forEach((article) => {
 				const url = buildArticleUrl(cat, subcat, article.page);
-				html += `<li class="list-group-item"><a href="${url}">${article.page} - ${article.title}</a></li>`;
+				html += createArticleItem(url, article.page, article.title, true);
 			});
 			html += "</ul>";
 		} else {
@@ -202,7 +202,7 @@ async function renderCategoryContent({ cat, subcat = null }) {
 					html += `<h2 class="h5 mt-4">${subValue.title || subKey}</h2><ul class="list-group mb-3">`;
 					subValue.articles.forEach((article) => {
 						const url = buildArticleUrl(cat, subKey, article.page);
-						html += `<li class="list-group-item"><a href="${url}">${article.page} - ${article.title}</a></li>`;
+						html += createArticleItem(url, article.page, article.title, true);
 					});
 					html += "</ul>";
 				}
@@ -210,7 +210,7 @@ async function renderCategoryContent({ cat, subcat = null }) {
 				html += `<ul class="list-group mt-3">`;
 				category.articles.forEach((article) => {
 					const url = buildArticleUrl(cat, null, article.page);
-					html += `<li class="list-group-item"><a href="${url}">${article.page} - ${article.title}</a></li>`;
+					html += createArticleItem(url, article.page, article.title, true);
 				});
 				html += "</ul>";
 			}
@@ -236,6 +236,20 @@ function createBreadcrumbLink(href, textContent) {
 	link.textContent = textContent;
 	link.className = "text-dark";
 	return link;
+}
+
+/**
+ * Crée un élément de liste pour un article
+ * @param {string} url - URL de l'article
+ * @param {string} page - Identifiant de la page
+ * @param {string} title - Titre de l'article
+ * @param {boolean} [useBtnClass=true] - Utiliser une classe de bouton pour le lien
+ * @returns {string} HTML de l'élément de liste
+ */
+function createArticleItem(url, page, title, useBtnClass = true) {
+	// const classes = useBtnClass ? "btn btn-dark text-white" : "";
+	const classes = useBtnClass ? "btn btn-dark ms-auto" : "";
+	return `<li class="list-group-item"><a class="${classes}" href="${url}">${page} - ${title}</a></li>`;
 }
 
 /**

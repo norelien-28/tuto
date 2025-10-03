@@ -23,7 +23,7 @@ async function generateMenu() {
 			li.className = "nav-item dropdown";
 
 			const toggle = document.createElement("a");
-			toggle.className = "nav-link dropdown-toggle";
+			toggle.className = "nav-link dropdown-toggle text-white";
 			toggle.href = "#";
 			toggle.id = `dropdown-${catKey}`;
 			toggle.setAttribute("role", "button");
