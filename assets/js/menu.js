@@ -1,8 +1,8 @@
-// generateMenu.js
+// menu.js
 
 /**
- * Génère le menu HTML à partir des données JSON
- * @throws {Error} si le chargement des données JSON échoue
+ * Génère dynamiquement le menu Bootstrap à partir des données JSON.
+ * Gère les catégories, sous-catégories, et articles.
  */
 async function generateMenu() {
 	const navUl = document.querySelector(".navbar-nav");
@@ -12,73 +12,75 @@ async function generateMenu() {
 	}
 
 	try {
-		const basePath = getBasePath(); // -> ex: "/tuto/"
+		const basePath = getBasePath();
 		const res = await fetch(`${basePath}data/articles.json`);
 		const data = await res.json();
 
-		navUl.innerHTML = ""; // reset menu
+		navUl.innerHTML = ""; // Nettoyage du menu
 
 		for (const [catKey, catValue] of Object.entries(data)) {
 			const li = document.createElement("li");
 			li.className = "nav-item dropdown";
 
-			const a = document.createElement("a");
-			a.className = "nav-link dropdown-toggle";
-			a.href = "#";
-			a.id = `dropdown-${catKey}`;
-			a.setAttribute("role", "button");
-			a.setAttribute("data-bs-toggle", "dropdown");
-			a.setAttribute("aria-expanded", "false");
-			a.textContent = catValue.title || catKey;
+			const toggle = document.createElement("a");
+			toggle.className = "nav-link dropdown-toggle";
+			toggle.href = "#";
+			toggle.id = `dropdown-${catKey}`;
+			toggle.setAttribute("role", "button");
+			toggle.setAttribute("data-bs-toggle", "dropdown");
+			toggle.setAttribute("aria-expanded", "false");
+			toggle.textContent = catValue.title || catKey;
 
-			const ul = document.createElement("ul");
-			ul.className = "dropdown-menu";
-			ul.setAttribute("aria-labelledby", a.id);
+			const dropdownMenu = document.createElement("ul");
+			dropdownMenu.className = "dropdown-menu";
+			dropdownMenu.setAttribute("aria-labelledby", toggle.id);
 
-			// 2 cas : sous-catégories ou articles directs
 			if (catValue.subcategories) {
+				// Sous-catégories
 				for (const [subcatKey, subcatValue] of Object.entries(catValue.subcategories)) {
-					// Header sous-catégorie
+					// Titre de sous-catégorie
 					const headerLi = document.createElement("li");
 					const header = document.createElement("h6");
 					header.className = "dropdown-header text-dark fw-bold";
 					header.textContent = subcatValue.title || subcatKey;
 					headerLi.appendChild(header);
-					ul.appendChild(headerLi);
+					dropdownMenu.appendChild(headerLi);
 
-					// Articles sous sous-catégorie
+					// Articles de la sous-catégorie
 					subcatValue.articles.forEach((article) => {
 						const articleLi = document.createElement("li");
 						const articleA = document.createElement("a");
 						articleA.className = "dropdown-item";
-						articleA.href = `index.html?cat=${catKey}&subcat=${subcatKey}&page=${article.page}`;
+						articleA.href = buildArticleUrl(catKey, subcatKey, article.page);
 						articleA.textContent = `${article.page} - ${article.title}`;
 						articleLi.appendChild(articleA);
-						ul.appendChild(articleLi);
+						dropdownMenu.appendChild(articleLi);
 					});
 
-					// Séparateur entre sous-catégories
-					ul.appendChild(document.createElement("li")).innerHTML = '<hr class="dropdown-divider" />';
+					// Séparateur
+					dropdownMenu.appendChild(document.createElement("li")).innerHTML = '<hr class="dropdown-divider" />';
 				}
-				// Retirer le dernier séparateur
-				ul.removeChild(ul.lastChild);
+
+				// Supprimer le dernier séparateur
+				dropdownMenu.removeChild(dropdownMenu.lastChild);
 			} else if (catValue.articles) {
+				// Catégorie directe sans sous-catégories
 				catValue.articles.forEach((article) => {
 					const articleLi = document.createElement("li");
 					const articleA = document.createElement("a");
 					articleA.className = "dropdown-item";
-					articleA.href = `index.html?cat=${catKey}&page=${article.page}`;
+					articleA.href = buildArticleUrl(catKey, null, article.page);
 					articleA.textContent = `${article.page} - ${article.title}`;
 					articleLi.appendChild(articleA);
-					ul.appendChild(articleLi);
+					dropdownMenu.appendChild(articleLi);
 				});
 			}
 
-			li.appendChild(a);
-			li.appendChild(ul);
+			li.appendChild(toggle);
+			li.appendChild(dropdownMenu);
 			navUl.appendChild(li);
 		}
 	} catch (e) {
-		console.error("Erreur chargement menu:", e);
+		console.error("❌ Erreur chargement menu:", e);
 	}
 }

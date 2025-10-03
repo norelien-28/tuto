@@ -1,3 +1,5 @@
+// article-navigation.js
+
 /**
  * Génère les liens de navigation (précédent / suivant) dans un article.
  *
@@ -7,34 +9,27 @@
  * @param {string} options.page - Identifiant de la page actuelle (ex: "3.1.1")
  */
 async function generateArticleNavigation({ cat, subcat, page }) {
-	if (!cat || !page) return; // Catégorie ou page manquante → pas de navigation
+	if (!cat || !page) return;
 
-	// Création du conteneur des boutons de navigation
 	const navContainer = document.createElement("div");
 	navContainer.className = "d-flex justify-content-between mt-4";
 
 	try {
-		// Chargement du fichier JSON des articles
 		const basePath = getBasePath();
 		const res = await fetch(`${basePath}data/articles.json`);
 		const data = await res.json();
 
 		let articlesList = [];
 
-		// Récupération de la liste d'articles selon la catégorie et sous-catégorie
 		if (subcat && data[cat]?.subcategories?.[subcat]) {
 			articlesList = data[cat].subcategories[subcat].articles;
 		} else if (!subcat && data[cat]?.articles) {
 			articlesList = data[cat].articles;
 		}
 
-		// Trouve l'index de l'article actuel dans la liste
 		const currentIndex = articlesList.findIndex((a) => a.page === page);
-		if (currentIndex === -1) return; // Article non trouvé
+		if (currentIndex === -1) return;
 
-		// -----------------------------
-		// Lien vers l'article précédent
-		// -----------------------------
 		if (currentIndex > 0) {
 			const prev = articlesList[currentIndex - 1];
 			const prevLink = document.createElement("a");
@@ -43,13 +38,9 @@ async function generateArticleNavigation({ cat, subcat, page }) {
 			prevLink.innerHTML = `← ${prev.title}`;
 			navContainer.appendChild(prevLink);
 		} else {
-			// Si aucun précédent, on garde l'espace pour l'alignement
 			navContainer.appendChild(document.createElement("div"));
 		}
 
-		// -----------------------------
-		// Lien vers l'article suivant
-		// -----------------------------
 		if (currentIndex < articlesList.length - 1) {
 			const next = articlesList[currentIndex + 1];
 			const nextLink = document.createElement("a");
@@ -59,27 +50,19 @@ async function generateArticleNavigation({ cat, subcat, page }) {
 			navContainer.appendChild(nextLink);
 		}
 
-		// Ajoute les liens de navigation en bas du contenu principal
-		document.querySelector(CONTENT_SELECTOR).appendChild(navContainer);
+		document.querySelector("#content").appendChild(navContainer);
 	} catch (e) {
 		console.warn("❌ Erreur navigation articles :", e);
 	}
 }
 
 /**
- * Génère le fil d'Ariane stylé Bootstrap au-dessus du contenu principal
- * en utilisant les titres du fichier articles.json.
- *
- * @param {Object} options
- * @param {string} options.cat - La catégorie
- * @param {string|null} options.subcat - La sous-catégorie (optionnel)
- * @param {string} options.page - La page
+ * Génère le fil d’Ariane Bootstrap.
  */
 async function generateBreadcrumb({ cat, subcat, page }) {
 	const content = document.querySelector("#content");
 	if (!content) return;
 
-	// Conteneur breadcrumb
 	const breadcrumbContainer = document.createElement("nav");
 	breadcrumbContainer.setAttribute("aria-label", "breadcrumb");
 	breadcrumbContainer.setAttribute("class", "mb-3 border-bottom border-secondaire");
@@ -87,7 +70,6 @@ async function generateBreadcrumb({ cat, subcat, page }) {
 	const ol = document.createElement("ol");
 	ol.className = "breadcrumb small text-secondary";
 
-	// Accueil (lien)
 	const liHome = document.createElement("li");
 	liHome.className = "breadcrumb-item";
 	const homeLink = createBreadcrumbLink("index.html?page=home", "Accueil");
@@ -95,24 +77,18 @@ async function generateBreadcrumb({ cat, subcat, page }) {
 	ol.appendChild(liHome);
 
 	try {
-		// Récupérer données articles.json
 		const basePath = getBasePath();
 		const res = await fetch(`${basePath}data/articles.json`);
 		const data = await res.json();
 
-		// Titre catégorie lisible
 		let catTitle = cat;
-		if (cat && data[cat]?.title) {
-			catTitle = data[cat].title;
-		}
+		if (cat && data[cat]?.title) catTitle = data[cat].title;
 
-		// Titre sous-catégorie lisible
 		let subcatTitle = subcat;
 		if (cat && subcat && data[cat]?.subcategories?.[subcat]?.title) {
 			subcatTitle = data[cat].subcategories[subcat].title;
 		}
 
-		// Titre page lisible
 		let pageTitle = page;
 		let articlesList = [];
 
@@ -127,7 +103,6 @@ async function generateBreadcrumb({ cat, subcat, page }) {
 			pageTitle = currentArticle.title;
 		}
 
-		// Catégorie (lien)
 		if (cat) {
 			const liCat = document.createElement("li");
 			liCat.className = "breadcrumb-item";
@@ -136,7 +111,6 @@ async function generateBreadcrumb({ cat, subcat, page }) {
 			ol.appendChild(liCat);
 		}
 
-		// Sous-catégorie (lien)
 		if (subcat) {
 			const liSubcat = document.createElement("li");
 			liSubcat.className = "breadcrumb-item";
@@ -145,15 +119,16 @@ async function generateBreadcrumb({ cat, subcat, page }) {
 			ol.appendChild(liSubcat);
 		}
 
-		// Page courante (non cliquable)
-		const liPage = document.createElement("li");
-		liPage.className = "breadcrumb-item active";
-		liPage.setAttribute("aria-current", "page");
-		liPage.textContent = pageTitle;
-		ol.appendChild(liPage);
+		if (page) {
+			const liPage = document.createElement("li");
+			liPage.className = "breadcrumb-item active";
+			liPage.setAttribute("aria-current", "page");
+			liPage.textContent = pageTitle;
+			ol.appendChild(liPage);
+		}
 	} catch (e) {
-		console.warn("Erreur chargement articles.json pour breadcrumb", e);
-		// En cas d'erreur, on génère quand même le fil basique sans titres lisibles
+		console.warn("Erreur breadcrumb:", e);
+		// Fil de secours
 		if (cat) {
 			const liCat = document.createElement("li");
 			liCat.className = "breadcrumb-item";
@@ -166,23 +141,129 @@ async function generateBreadcrumb({ cat, subcat, page }) {
 			liSubcat.textContent = subcat;
 			ol.appendChild(liSubcat);
 		}
-		const liPage = document.createElement("li");
-		liPage.className = "breadcrumb-item active";
-		liPage.setAttribute("aria-current", "page");
-		liPage.textContent = page;
-		ol.appendChild(liPage);
+		if (page) {
+			const liPage = document.createElement("li");
+			liPage.className = "breadcrumb-item active";
+			liPage.setAttribute("aria-current", "page");
+			liPage.textContent = page;
+			ol.appendChild(liPage);
+		}
 	}
 
 	breadcrumbContainer.appendChild(ol);
-
-	// Insertion en haut du contenu
 	content.prepend(breadcrumbContainer);
 }
 
+/**
+ * Affiche dynamiquement le contenu d'une catégorie ou sous-catégorie.
+ * Liste les sous-catégories et/ou articles.
+ *
+ * @param {Object} options
+ * @param {string} options.cat - Clé de la catégorie
+ * @param {string|null} options.subcat - Clé de la sous-catégorie (facultatif)
+ */
+async function renderCategoryContent({ cat, subcat = null }) {
+	const content = document.querySelector("#content");
+	if (!content) return;
+
+	try {
+		const basePath = getBasePath();
+		const res = await fetch(`${basePath}data/articles.json`);
+		const data = await res.json();
+
+		let html = "";
+
+		if (!data[cat]) {
+			content.innerHTML = `<p>❌ Catégorie introuvable</p>`;
+			return;
+		}
+
+		if (subcat) {
+			// Sous-catégorie
+			const sub = data[cat].subcategories?.[subcat];
+			if (!sub) {
+				content.innerHTML = `<p>❌ Sous-catégorie introuvable</p>`;
+				return;
+			}
+
+			html += `<h1>${sub.title || subcat}</h1><ul class="list-group mb-4">`;
+			sub.articles.forEach((article) => {
+				const url = buildArticleUrl(cat, subcat, article.page);
+				html += `<li class="list-group-item"><a href="${url}">${article.page} - ${article.title}</a></li>`;
+			});
+			html += "</ul>";
+		} else {
+			// Catégorie
+			const category = data[cat];
+			html += `<h1>${category.title || cat}</h1>`;
+
+			if (category.subcategories) {
+				for (const [subKey, subValue] of Object.entries(category.subcategories)) {
+					html += `<h2 class="h5 mt-4">${subValue.title || subKey}</h2><ul class="list-group mb-3">`;
+					subValue.articles.forEach((article) => {
+						const url = buildArticleUrl(cat, subKey, article.page);
+						html += `<li class="list-group-item"><a href="${url}">${article.page} - ${article.title}</a></li>`;
+					});
+					html += "</ul>";
+				}
+			} else if (category.articles) {
+				html += `<ul class="list-group mt-3">`;
+				category.articles.forEach((article) => {
+					const url = buildArticleUrl(cat, null, article.page);
+					html += `<li class="list-group-item"><a href="${url}">${article.page} - ${article.title}</a></li>`;
+				});
+				html += "</ul>";
+			}
+		}
+
+		content.innerHTML = html;
+		await generateBreadcrumb({ cat, subcat, page: null });
+	} catch (e) {
+		console.error("❌ Erreur affichage catégorie :", e);
+		content.innerHTML = `<p>❌ Erreur lors du chargement de la catégorie</p>`;
+	}
+}
+
+/**
+ * Crée un lien du fil d'Ariane.
+ * @param {string} href - URL du lien
+ * @param {string} textContent - Texte affiché du lien
+ * @returns {HTMLAnchorElement}
+ */
 function createBreadcrumbLink(href, textContent) {
 	const link = document.createElement("a");
 	link.href = href;
 	link.textContent = textContent;
 	link.className = "text-dark";
 	return link;
+}
+
+/**
+ * Construit l'URL d'un article selon catégorie, sous-catégorie et page.
+ *
+ * @param {string} cat - Clé de la catégorie
+ * @param {string|null} subcat - Clé de la sous-catégorie (facultatif)
+ * @param {string} page - Identifiant de la page
+ * @returns {string} URL construite
+ */
+function buildArticleUrl(cat, subcat, page) {
+	let url = `index.html?cat=${encodeURIComponent(cat)}`;
+	if (subcat) {
+		url += `&subcat=${encodeURIComponent(subcat)}`;
+	}
+	if (page) {
+		url += `&page=${encodeURIComponent(page)}`;
+	}
+	return url;
+}
+
+/**
+ * Retourne le chemin de base pour les requêtes fetch.
+ * Utile si les fichiers sont dans un sous-dossier ou différent contexte.
+ *
+ * @returns {string}
+ */
+function getBasePath() {
+	// Par défaut, dossier courant, peut être adapté si besoin
+	return "";
 }

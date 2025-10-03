@@ -1,4 +1,4 @@
-// app.js
+//  app.js
 
 // --------------------------
 // Constantes et sélecteurs
@@ -9,18 +9,21 @@ const HEADER_SELECTOR = "#header";
 const FOOTER_SELECTOR = "#footer";
 const CONTENT_SELECTOR = "#content";
 
+// --------------------------
+// Initialisation principale
+// --------------------------
+
 init();
 
 async function init() {
 	await loadLayout();
-	await loadPageContent();
+	await handleRouting();
 }
 
-/**
- * Charge le header et le footer du site web.
- * Une fois le header chargé, on génère le menu.
- * @throws {Error} Si le chargement d'un des éléments échoue.
- */
+// --------------------------
+// Chargement layout (header/footer)
+// --------------------------
+
 async function loadLayout() {
 	await loadPartial("includes/header.html", document.querySelector(HEADER_SELECTOR));
 	await loadPartial("includes/footer.html", document.querySelector(FOOTER_SELECTOR));
@@ -33,12 +36,6 @@ async function loadLayout() {
 	}
 }
 
-/**
- * Charge un élément HTML partiel dans un élément cible.
- * @param {string} url - URL de l'élément HTML partiel à charger.
- * @param {Element} targetElement - Élément cible dans lequel charger le contenu.
- * @throws {Error} Si le chargement d'un des éléments échoue.
- */
 async function loadPartial(url, targetElement) {
 	if (!targetElement) {
 		console.warn(`⚠️ Élément cible non trouvé pour ${url}`);
@@ -54,57 +51,56 @@ async function loadPartial(url, targetElement) {
 }
 
 // --------------------------
-// Chargement du contenu principal
+// Routing basé sur URL
 // --------------------------
 
-/**
- * Charge le contenu principal de la page.
- * La page est définie par les paramètres de l'URL :
- * - cat : catégorie
- * - subcat : sous-catégorie
- * - page : nom de la page
- * @throws {Error} Si le chargement de la page échoue.
- */
-async function loadPageContent() {
+async function handleRouting() {
 	const { cat, subcat, page } = getUrlParams();
 	const content = document.querySelector(CONTENT_SELECTOR);
 	if (!content) {
 		console.warn("⚠️ Élément content introuvable");
 		return;
 	}
+
 	const basePath = getBasePath();
 	const pageName = page || "home";
 
-	const path = buildContentPath(basePath, cat, subcat, pageName);
+	// Si une page est précisée → on charge le contenu HTML
+	if (page) {
+		const path = buildContentPath(basePath, cat, subcat, pageName);
 
-	try {
-		const res = await fetch(path);
-		if (!res.ok) throw new Error("Page introuvable");
-		const html = await res.text();
-		content.innerHTML = html;
-		updatePageTitle({ cat, subcat, page: pageName, html });
+		try {
+			const res = await fetch(path);
+			if (!res.ok) throw new Error("Page introuvable");
 
-		await generateBreadcrumb({ cat, subcat, page: pageName });
-		await generateArticleNavigation({ cat, subcat, page: pageName });
-	} catch {
-		content.innerHTML = `<p>❌ Cette page n'existe pas.</p>`;
-		document.title = `Page introuvable - ${SITE_NAME}`;
+			const html = await res.text();
+			content.innerHTML = html;
+			updatePageTitle({ cat, subcat, page: pageName, html });
+
+			await generateBreadcrumb({ cat, subcat, page: pageName });
+			await generateArticleNavigation({ cat, subcat, page: pageName });
+		} catch (e) {
+			content.innerHTML = `<p>❌ Cette page n'existe pas.</p>`;
+			document.title = `Page introuvable - ${SITE_NAME}`;
+		}
+	}
+
+	// Si catégorie présente sans page → on affiche les articles ou sous-catégories
+	else if (cat) {
+		await generateBreadcrumb({ cat, subcat, page: null });
+		await renderCategoryContent({ cat, subcat });
+	}
+
+	// Si ni page ni cat → on est sur la home
+	else {
+		await loadHomepage(); // optionnel si tu veux un comportement personnalisé
 	}
 }
 
-/**
- * Construit le chemin d'accès à un fichier de contenu.
- * Le chemin est généré en fonction des paramètres de l'URL :
- * - basePath : base du chemin d'accès
- * - cat : catégorie
- * - subcat : sous-catégorie
- * - page : nom de la page
- * @param {string} basePath - Base du chemin d accès
- * @param {string} cat - Catégorie
- * @param {string|null} subcat - Sous-catégorie, peut être null
- * @param {string} page - Nom de la page
- * @returns {string} Chemin d accès au fichier de contenu
- */
+// --------------------------
+// Génération du chemin d'accès contenu
+// --------------------------
+
 function buildContentPath(basePath, cat, subcat, page) {
 	if (cat && subcat) {
 		return `${basePath}content/articles/${cat}/${subcat}/${page}.html`;
@@ -115,19 +111,16 @@ function buildContentPath(basePath, cat, subcat, page) {
 	}
 }
 
-/**
- * Met à jour le titre de la page en fonction des paramètres de l'URL et du contenu HTML.
- * @param {{ cat: string, subcat: string|null, page: string, html: string }} - Paramètres de l'URL et contenu HTML
- * @returns {void}
- */
+// --------------------------
+// Mise à jour du titre HTML
+// --------------------------
+
 function updatePageTitle({ cat, subcat, page, html }) {
-	// Page d'accueil
 	if (page === "home" && !cat) {
 		document.title = `Accueil - ${SITE_NAME}`;
 		return;
 	}
 
-	// Extraire un titre depuis le <h1> du contenu
 	const h1Match = html.match(/<h1[^>]*>(.*?)<\/h1>/i);
 	const h1Text = h1Match ? h1Match[1].trim() : null;
 
@@ -139,5 +132,37 @@ function updatePageTitle({ cat, subcat, page, html }) {
 		document.title = `${cat} / ${page} - ${SITE_NAME}`;
 	} else {
 		document.title = `${page} - ${SITE_NAME}`;
+	}
+}
+
+// --------------------------
+// Paramètres URL
+// --------------------------
+
+function getUrlParams() {
+	const params = new URLSearchParams(window.location.search);
+	return {
+		cat: params.get("cat"),
+		subcat: params.get("subcat"),
+		page: params.get("page"),
+	};
+}
+
+// --------------------------
+// Accueil par défaut (optionnel)
+// --------------------------
+
+async function loadHomepage() {
+	const content = document.querySelector(CONTENT_SELECTOR);
+	const basePath = getBasePath();
+	try {
+		const res = await fetch(`${basePath}content/home.html`);
+		if (!res.ok) throw new Error();
+		const html = await res.text();
+		content.innerHTML = html;
+		updatePageTitle({ cat: null, subcat: null, page: "home", html });
+	} catch (e) {
+		content.innerHTML = `<p>❌ Page d'accueil non trouvée.</p>`;
+		document.title = `Accueil introuvable - ${SITE_NAME}`;
 	}
 }
