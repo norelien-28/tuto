@@ -1,3 +1,9 @@
+// generateMenu.js
+
+/**
+ * Génère le menu HTML à partir des données JSON
+ * @throws {Error} si le chargement des données JSON échoue
+ */
 async function generateMenu() {
 	const navUl = document.querySelector(".navbar-nav");
 	if (!navUl) {
