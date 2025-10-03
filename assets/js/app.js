@@ -72,6 +72,8 @@ async function loadPageContent() {
 		const html = await res.text();
 		content.innerHTML = html;
 		updatePageTitle({ cat, subcat, page: pageName, html });
+
+		await generateArticleNavigation({ cat, subcat, page: pageName });
 	} catch {
 		content.innerHTML = `<p>❌ Cette page n'existe pas.</p>`;
 		document.title = `Page introuvable - ${SITE_NAME}`;
@@ -110,6 +112,15 @@ function updatePageTitle({ cat, subcat, page, html }) {
 		document.title = `${page} - ${SITE_NAME}`;
 	}
 }
+
+/**
+ * Génère une navigation pour les articles
+ * @param {Object} options Les options de génération
+ * @param {string} options.cat La catégorie de l'article
+ * @param {string} options.subcat La sous-catégorie de l'article
+ * @param {string} options.page La page de l'article
+ * @returns {Promise<void>} Une promesse sans valeur
+ */
 
 // --------------------------
 // Helpers
