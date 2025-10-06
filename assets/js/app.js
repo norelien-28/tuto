@@ -83,6 +83,8 @@ async function handleRouting() {
 			content.innerHTML = `<p>❌ Cette page n'existe pas.</p>`;
 			document.title = `Page introuvable - ${SITE_NAME}`;
 		}
+
+		loadArticleList();
 	}
 
 	// Si catégorie présente sans page → on affiche les articles ou sous-catégories
