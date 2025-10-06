@@ -55,10 +55,7 @@ async function generateArticleNavigation({ cat, subcat, page }) {
 		// Lien précédent
 		if (currentIndex > 0) {
 			const prev = flatArticles[currentIndex - 1];
-			const prevLink = document.createElement("a");
-			prevLink.href = buildArticleUrl(prev.cat, prev.subcat, prev.page);
-			prevLink.className = "btn btn-outline-dark";
-			prevLink.innerHTML = `← ${prev.title}`;
+			const prevLink = createNavButton(prev, "prev", false, data);
 			navContainer.appendChild(prevLink);
 		} else {
 			navContainer.appendChild(document.createElement("div"));
@@ -67,10 +64,7 @@ async function generateArticleNavigation({ cat, subcat, page }) {
 		// Lien suivant
 		if (currentIndex < flatArticles.length - 1) {
 			const next = flatArticles[currentIndex + 1];
-			const nextLink = document.createElement("a");
-			nextLink.href = buildArticleUrl(next.cat, next.subcat, next.page);
-			nextLink.className = "btn btn-dark ms-auto";
-			nextLink.innerHTML = `${next.title} →`;
+			const nextLink = createNavButton(next, "next", true, data);
 			navContainer.appendChild(nextLink);
 		}
 
@@ -274,4 +268,36 @@ function createArticleItem(url, page, title, useBtnClass = true) {
 	// const classes = useBtnClass ? "btn btn-dark text-white" : "";
 	const classes = useBtnClass ? "btn btn-dark ms-auto" : "";
 	return `<li class="list-group-item"><a class="${classes}" href="${url}">${page} - ${title}</a></li>`;
+}
+
+/**
+ * Retourne un label de type "Catégorie > Sous-catégorie" ou juste "Catégorie".
+ * @param {Object} data - Données complètes de articles.json
+ * @param {string} cat - Clé de la catégorie
+ * @param {string|null} subcat - Clé de la sous-catégorie (peut être null)
+ * @returns {string}
+ */
+function getCategoryLabel(data, cat, subcat) {
+	if (!data[cat]) return cat;
+	const catTitle = data[cat].title || cat;
+	if (subcat && data[cat].subcategories?.[subcat]) {
+		const subTitle = data[cat].subcategories[subcat].title || subcat;
+		return `${catTitle} > ${subTitle}`;
+	}
+	return catTitle;
+}
+
+function createNavButton(article, direction, isDark, data) {
+	const link = document.createElement("a");
+	link.href = buildArticleUrl(article.cat, article.subcat, article.page);
+	link.className = `btn ${isDark ? "btn-dark ms-auto text-end" : "btn-outline-dark text-start"}`;
+
+	const labelClass = isDark ? "text-white-50" : "text-muted"; // meilleur contraste
+
+	link.innerHTML = `
+		<small class="d-block ${labelClass}">${getCategoryLabel(data, article.cat, article.subcat)}</small>
+		<strong>${direction === "prev" ? `← ${article.title}` : `${article.title} →`}</strong>
+	`;
+
+	return link;
 }
