@@ -12,6 +12,7 @@ body {
 	color: #212529;
 }
 
+/* navbar personnalisation */
 .navbar-dark.bg-dark {
 	background-color: #212529 !important; /* un gris foncé plus doux */
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
@@ -31,6 +32,7 @@ body {
 	color: #28a745 !important;
 	background-color: #e9f7ef !important;
 }
+/* fin - navbar personnalisation */
 
 .dropdown-menu {
 	border-radius: 0.3rem;
@@ -44,52 +46,15 @@ body {
 	border-radius: 0.5rem;
 }
 
-.hero {
-	position: relative;
+.hero-banner {
 	background: url("../img/banner.jpg") center/cover no-repeat;
 	height: 60vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	color: white;
+}
+.bg-dark-overlay {
+	background-color: rgba(0, 0, 0, 0.6);
 }
 
-.hero .overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.6); /* Opacité assombrie */
-}
-
-.hero .container {
-	position: relative;
-	z-index: 2;
-}
-
-.card {
-	transition: transform 0.2s ease-in-out;
-}
-
-.card:hover {
-	transform: translateY(-5px);
-}
-
-/* Remplace css tuto */
-.items-center {
-	display: none;
-}
-
-.text-green-soft {
-	color: #28a745 !important;
-}
-
-.bg-green-soft {
-	background-color: #28a745 !important;
-}
-
+/* footer personnalisation */
 footer a,
 .breadcrumb-item a {
 	position: relative;
@@ -119,6 +84,7 @@ footer a:hover::after,
 	transform: scaleX(1);
 	transform-origin: left;
 }
+/* FIN - footer personnalisation */
 
 .list-group .btn-dark:hover {
 	background-color: #28a745 !important;
