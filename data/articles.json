@@ -2,9 +2,9 @@
   "01_Introduction": {
     "title": "Introduction",
     "articles": [
-      { "page": "01", "title": "Qu'est-ce que le développement ?" },
-      { "page": "02", "title": "Environnements de développement" },
-      { "page": "03", "title": "Mes premiers programmes" }
+      { "page": "01.01", "title": "Qu'est-ce que le développement ?" },
+      { "page": "01.02", "title": "Environnements de développement" },
+      { "page": "01.03", "title": "Mes premiers programmes" }
     ]
   },
   "02_HTML_CSS": {
@@ -13,27 +13,27 @@
       "01_HTML": {
         "title": "HTML",
         "articles": [
-          { "page": "01", "title": "Bases HTML" },
-          { "page": "02", "title": "Structures de page" }
+          { "page": "02.01", "title": "Bases HTML" },
+          { "page": "02.02", "title": "Structures de page" }
         ]
       },
       "02_CSS": {
         "title": "CSS",
         "articles": [
-          { "page": "01", "title": "Introduction CSS" },
-          { "page": "02", "title": "Mise en page avancée" },
-          { "page": "03", "title": "Responsive Design" }
+          { "page": "02.03", "title": "Introduction CSS" },
+          { "page": "02.04", "title": "Mise en page avancée" },
+          { "page": "02.05", "title": "Responsive Design" }
         ]
       }
       ,
       "03_JavaScript": {
         "title": "JavaScript",
         "articles": [
-          { "page": "01", "title": "Bases JavaScript" },
-          { "page": "02", "title": "Manipulation du DOM" },
-          { "page": "03", "title": "Fonctions avancées en JavaScript" },
-          { "page": "04", "title": "Promesses et async/await en JavaScript" },
-          { "page": "05", "title": "Bibliotheques JavaScript" }
+          { "page": "02.06", "title": "Bases JavaScript" },
+          { "page": "02.07", "title": "Manipulation du DOM" },
+          { "page": "02.08", "title": "Fonctions avancées en JavaScript" },
+          { "page": "02.09", "title": "Promesses et async/await en JavaScript" },
+          { "page": "02.10", "title": "Bibliotheques JavaScript" }
         ]
       }
     }
@@ -44,51 +44,53 @@
       "01_Bases": {
         "title": "Bases de PHP",
         "articles": [
-          { "page": "01", "title": "Introduction à PHP" },
-          { "page": "02", "title": "Syntaxe de base et variables" },
-          { "page": "03", "title": "Conditions et boucles" },
-          { "page": "04", "title": "Fonctions en PHP" },
-          { "page": "05", "title": "Les tableaux et tableaux associatifs" }
+          { "page": "03.01", "title": "Introduction à PHP" },
+          { "page": "03.02", "title": "Syntaxe de base et variables" },
+          { "page": "03.03", "title": "Conditions et boucles" },
+          { "page": "03.04", "title": "Fonctions en PHP" },
+          { "page": "03.05", "title": "Les tableaux et tableaux associatifs" }
         ]
       },
       "02_Web": {
         "title": "PHP et le Web",
         "articles": [
-          { "page": "01", "title": "Formulaires HTML et traitement PHP" },
-          { "page": "02", "title": "Sessions et cookies" }
+          { "page": "03.06", "title": "Formulaires HTML et traitement PHP" },
+          { "page": "03.07", "title": "Sessions et cookies" }
         ]
       },
       "03_BDD": {
         "title": "Bases de données",
         "articles": [
-          { "page": "01", "title": "Connexion à une base de données (MySQL avec PDO)" },
-          { "page": "02", "title": "Requêtes SQL en PHP (CRUD)" }
+          { "page": "03.08", "title": "Connexion à une base de données (MySQL avec PDO)" },
+          { "page": "03.09", "title": "Requêtes SQL en PHP (CRUD)" }
         ]
       },
       "04_Architecture": {
         "title": "Organisation et sécurité",
         "articles": [
-          { "page": "01", "title": "Organisation du code : fichiers, includes et MVC simple" },
-          { "page": "02", "title": "Sécurité : injection SQL, XSS, CSRF (bases)" }
+          { "page": "03.10", "title": "Organisation du code : fichiers, includes et MVC simple" },
+          { "page": "03.11", "title": "Sécurité : injection SQL, XSS, CSRF (bases)" }
         ]
       },
       "05_Avance": {
         "title": "PHP avancé",
         "articles": [
-          { "page": "01", "title": "Introduction à la programmation orientée objet en PHP" },
-          { "page": "02", "title": "Utilisation de Composer et autoloading" }
+          { "page": "03.12", "title": "Introduction à la programmation orientée objet en PHP" },
+          { "page": "03.13", "title": "Utilisation de Composer et autoloading" }
         ]
       },
       "06_API": {
         "title": "API REST avec PHP",
         "articles": [
-          { "page": "3.2.14", "title": "Créer une API REST avec PHP (vanilla)" },
-          { "page": "3.2.15", "title": "Créer une API REST avec base de données (MySQL/PDO)" },
-          { "page": "3.2.16", "title": "Gestion des erreurs et codes HTTP dans une API" },
-          { "page": "3.2.17", "title": "Sécurité et authentification des API (JWT, OAuth)" },
-          { "page": "3.2.18", "title": "Versionning et bonnes pratiques REST" },
-          { "page": "3.2.19", "title": "Créer une API avec un micro-framework PHP (Slim)" },
-          { "page": "3.2.20", "title": "Tests automatisés d’une API REST" }
+          { "page": "03.14", "title": "Créer une API REST avec PHP (vanilla)" },
+          { "page": "03.15", "title": "Créer une API REST avec base de données (MySQL/PDO)" },
+          { "page": "03.16", "title": "Gestion des erreurs et codes HTTP dans une API" },
+          { "page": "03.17", "title": "Sécurité et authentification des API (JWT, OAuth)" },
+          { "page": "03.18", "title": "Versionning et bonnes pratiques REST" },
+          { "page": "03.19", "title": "Créer une API avec un micro-framework PHP (Slim)" },
+          { "page": "03.20", "title": "Tests automatisés d’une API REST" },
+          { "page": "03.21", "title": "Tests automatisés d’une API PHP (Slim ou vanilla)" },
+          { "page": "03.22", "title": "Générer de la documentation automatique pour ton API PHP" }
         ]
       }
     }
