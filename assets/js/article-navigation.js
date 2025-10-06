@@ -1,7 +1,8 @@
 // article-navigation.js
 
 /**
- * Génère les liens de navigation (précédent / suivant) dans un article.
+ * Génère les liens de navigation (précédent / suivant) dans un article,
+ * en tenant compte de toutes les catégories et sous-catégories.
  *
  * @param {Object} options - Options de navigation
  * @param {string} options.cat - Catégorie de l'article (ex: "03_Backend")
@@ -19,21 +20,43 @@ async function generateArticleNavigation({ cat, subcat, page }) {
 		const res = await fetch(`${basePath}data/articles.json`);
 		const data = await res.json();
 
-		let articlesList = [];
+		// Construire une liste linéaire de tous les articles
+		const flatArticles = [];
 
-		if (subcat && data[cat]?.subcategories?.[subcat]) {
-			articlesList = data[cat].subcategories[subcat].articles;
-		} else if (!subcat && data[cat]?.articles) {
-			articlesList = data[cat].articles;
+		for (const [catKey, category] of Object.entries(data)) {
+			if (category.subcategories) {
+				for (const [subKey, sub] of Object.entries(category.subcategories)) {
+					for (const article of sub.articles) {
+						flatArticles.push({
+							cat: catKey,
+							subcat: subKey,
+							page: article.page,
+							title: article.title,
+						});
+					}
+				}
+			}
+			if (category.articles) {
+				for (const article of category.articles) {
+					flatArticles.push({
+						cat: catKey,
+						subcat: null,
+						page: article.page,
+						title: article.title,
+					});
+				}
+			}
 		}
 
-		const currentIndex = articlesList.findIndex((a) => a.page === page);
+		// Trouver l'index de l'article actuel
+		const currentIndex = flatArticles.findIndex((a) => a.page === page);
 		if (currentIndex === -1) return;
 
+		// Lien précédent
 		if (currentIndex > 0) {
-			const prev = articlesList[currentIndex - 1];
+			const prev = flatArticles[currentIndex - 1];
 			const prevLink = document.createElement("a");
-			prevLink.href = buildArticleUrl(cat, subcat, prev.page);
+			prevLink.href = buildArticleUrl(prev.cat, prev.subcat, prev.page);
 			prevLink.className = "btn btn-outline-dark";
 			prevLink.innerHTML = `← ${prev.title}`;
 			navContainer.appendChild(prevLink);
@@ -41,10 +64,11 @@ async function generateArticleNavigation({ cat, subcat, page }) {
 			navContainer.appendChild(document.createElement("div"));
 		}
 
-		if (currentIndex < articlesList.length - 1) {
-			const next = articlesList[currentIndex + 1];
+		// Lien suivant
+		if (currentIndex < flatArticles.length - 1) {
+			const next = flatArticles[currentIndex + 1];
 			const nextLink = document.createElement("a");
-			nextLink.href = buildArticleUrl(cat, subcat, next.page);
+			nextLink.href = buildArticleUrl(next.cat, next.subcat, next.page);
 			nextLink.className = "btn btn-dark ms-auto";
 			nextLink.innerHTML = `${next.title} →`;
 			navContainer.appendChild(nextLink);
@@ -250,34 +274,4 @@ function createArticleItem(url, page, title, useBtnClass = true) {
 	// const classes = useBtnClass ? "btn btn-dark text-white" : "";
 	const classes = useBtnClass ? "btn btn-dark ms-auto" : "";
 	return `<li class="list-group-item"><a class="${classes}" href="${url}">${page} - ${title}</a></li>`;
-}
-
-/**
- * Construit l'URL d'un article selon catégorie, sous-catégorie et page.
- *
- * @param {string} cat - Clé de la catégorie
- * @param {string|null} subcat - Clé de la sous-catégorie (facultatif)
- * @param {string} page - Identifiant de la page
- * @returns {string} URL construite
- */
-function buildArticleUrl(cat, subcat, page) {
-	let url = `index.html?cat=${encodeURIComponent(cat)}`;
-	if (subcat) {
-		url += `&subcat=${encodeURIComponent(subcat)}`;
-	}
-	if (page) {
-		url += `&page=${encodeURIComponent(page)}`;
-	}
-	return url;
-}
-
-/**
- * Retourne le chemin de base pour les requêtes fetch.
- * Utile si les fichiers sont dans un sous-dossier ou différent contexte.
- *
- * @returns {string}
- */
-function getBasePath() {
-	// Par défaut, dossier courant, peut être adapté si besoin
-	return "";
 }
