@@ -2,49 +2,161 @@
   "01_Introduction": {
     "title": "Introduction",
     "articles": [
-      { "page": "1.1", "title": "Qu'est-ce que le développement ?" },
-      { "page": "1.2", "title": "Environnements de développement" },
-      { "page": "1.3", "title": "Mes premiers programmes" }
+      { "page": "01", "title": "Qu'est-ce que le développement ?" },
+      { "page": "02", "title": "Environnements de développement" },
+      { "page": "03", "title": "Mes premiers programmes" }
     ]
   },
-  "02_Frontend": {
-    "title": "Frontend",
+  "02_HTML_CSS": {
+    "title": "HTML & CSS",
     "subcategories": {
       "01_HTML": {
         "title": "HTML",
         "articles": [
-          { "page": "2.1.1", "title": "Bases HTML" },
-          { "page": "2.1.2", "title": "Structures de page" }
+          { "page": "01", "title": "Bases HTML" },
+          { "page": "02", "title": "Structures de page" }
         ]
       },
       "02_CSS": {
         "title": "CSS",
         "articles": [
-          { "page": "2.2.1", "title": "Introduction CSS" },
-          { "page": "2.2.2", "title": "Mise en page avancée" },
-          { "page": "2.2.3", "title": "Responsive Design" }
+          { "page": "01", "title": "Introduction CSS" },
+          { "page": "02", "title": "Mise en page avancée" },
+          { "page": "03", "title": "Responsive Design" }
         ]
-      },
+      }
+      ,
       "03_JavaScript": {
         "title": "JavaScript",
         "articles": [
-          { "page": "2.3.1", "title": "Bases JavaScript" },
-          { "page": "2.3.2", "title": "Manipulation du DOM" },
-          { "page": "2.3.3", "title": "Fonctions avancées en JavaScript" },
-          { "page": "2.3.4", "title": "Promesses et async/await en JavaScript" },
-          { "page": "2.3.5", "title": "Bibliotheques JavaScript" }
+          { "page": "01", "title": "Bases JavaScript" },
+          { "page": "02", "title": "Manipulation du DOM" },
+          { "page": "03", "title": "Fonctions avancées en JavaScript" },
+          { "page": "04", "title": "Promesses et async/await en JavaScript" },
+          { "page": "05", "title": "Bibliotheques JavaScript" }
+        ]
+      }
+    }
+  },
+  "03_PHP": {
+    "title": "PHP",
+    "subcategories": {
+      "01_Bases": {
+        "title": "Bases de PHP",
+        "articles": [
+          { "page": "01", "title": "Introduction à PHP" },
+          { "page": "02", "title": "Syntaxe de base et variables" },
+          { "page": "03", "title": "Conditions et boucles" },
+          { "page": "04", "title": "Fonctions en PHP" },
+          { "page": "05", "title": "Les tableaux et tableaux associatifs" }
         ]
       },
-      "04_Framework_React": {
-        "title": "Frameworks React",
+      "02_Web": {
+        "title": "PHP et le Web",
         "articles": [
-          { "page": "2.4.1", "title": "Introduction au framework React" },
-          { "page": "2.4.2", "title": "Installation et structure du projet" },
-          { "page": "2.4.3", "title": "Composants et props" },
-          { "page": "2.4.4", "title": "State et cycle de vie" },
-          { "page": "2.4.5", "title": "Events et forms" }
+          { "page": "01", "title": "Formulaires HTML et traitement PHP" },
+          { "page": "02", "title": "Sessions et cookies" }
+        ]
+      },
+      "03_BDD": {
+        "title": "Bases de données",
+        "articles": [
+          { "page": "01", "title": "Connexion à une base de données (MySQL avec PDO)" },
+          { "page": "02", "title": "Requêtes SQL en PHP (CRUD)" }
+        ]
+      },
+      "04_Architecture": {
+        "title": "Organisation et sécurité",
+        "articles": [
+          { "page": "01", "title": "Organisation du code : fichiers, includes et MVC simple" },
+          { "page": "02", "title": "Sécurité : injection SQL, XSS, CSRF (bases)" }
+        ]
+      },
+      "05_Avance": {
+        "title": "PHP avancé",
+        "articles": [
+          { "page": "01", "title": "Introduction à la programmation orientée objet en PHP" },
+          { "page": "02", "title": "Utilisation de Composer et autoloading" }
+        ]
+      },
+      "06_API": {
+        "title": "API REST avec PHP",
+        "articles": [
+          { "page": "3.2.14", "title": "Créer une API REST avec PHP (vanilla)" },
+          { "page": "3.2.15", "title": "Créer une API REST avec base de données (MySQL/PDO)" },
+          { "page": "3.2.16", "title": "Gestion des erreurs et codes HTTP dans une API" },
+          { "page": "3.2.17", "title": "Sécurité et authentification des API (JWT, OAuth)" },
+          { "page": "3.2.18", "title": "Versionning et bonnes pratiques REST" },
+          { "page": "3.2.19", "title": "Créer une API avec un micro-framework PHP (Slim)" },
+          { "page": "3.2.20", "title": "Tests automatisés d’une API REST" }
+        ]
+      }
+    }
+  },
+  "04_Bdd": {
+    "title": "Bdd",
+    "subcategories": {
+      "01_Bases": {
+        "title": "Bases",
+        "articles": [
+          { "page": "4.1", "title": "Introduction" }
+        ]
+      }
+    }
+  },
+  "05_React": {
+    "title": "React",
+    "articles": [
+      { "page": "1", "title": "Introduction au framework React" },
+      { "page": "2", "title": "Installation et structure du projet" },
+      { "page": "3", "title": "Composants et props" },
+      { "page": "4", "title": "State et cycle de vie" },
+      { "page": "5", "title": "Events et forms" }
+    ]
+  },
+  "06_Vue.js": {
+    "title": "vue.js",
+    "subcategories": {
+      "01_Bases": {
+        "title": "Bases",
+        "articles": [
+          { "page": "6.1", "title": "Introduction" }
+        ]
+      }
+    }
+  },
+  "07_Symfony": {
+    "title": "Symfony",
+    "subcategories": {
+      "01_Bases": {
+        "title": "Bases",
+        "articles": [
+          { "page": "7.1", "title": "Introduction" }
+        ]
+      }
+    }
+  },
+  "08_Wordpress": {
+    "title": "Wordpress",
+    "subcategories": {
+      "01_Bases": {
+        "title": "Bases",
+        "articles": [
+          { "page": "8.1", "title": "Introduction" }
+        ]
+      }
+    }
+  },
+  "09_Docker": {
+    "title": "Docker",
+    "subcategories": {
+      "01_Bases": {
+        "title": "Bases",
+        "articles": [
+          { "page": "9.1", "title": "Introduction" }
         ]
       }
     }
   } 
+
 }
