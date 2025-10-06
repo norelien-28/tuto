@@ -126,3 +126,7 @@ footer a:hover::after,
 	display: none;
 }
 /* fin - cache html en trop */
+
+.markdown blockquote:after {
+	left: 0;
+}
