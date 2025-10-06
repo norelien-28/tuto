@@ -1,10 +1,4 @@
 {
-    "00_Plan": {
-    "title": "Plan",
-    "articles": [
-      { "page": "0.1", "title": "Structure des articles" }
-    ]
-  },
   "01_Introduction": {
     "title": "Introduction",
     "articles": [
@@ -41,101 +35,16 @@
           { "page": "2.3.5", "title": "Bibliotheques JavaScript" }
         ]
       },
-      "04_Frameworks": {
-        "title": "Frameworks",
+      "04_Framework_React": {
+        "title": "Frameworks React",
         "articles": [
-          { "page": "2.4.1", "title": "React" },
-          { "page": "2.4.2", "title": "Vue.js" }
+          { "page": "2.4.1", "title": "Introduction au framework React" },
+          { "page": "2.4.2", "title": "Installation et structure du projet" },
+          { "page": "2.4.3", "title": "Composants et props" },
+          { "page": "2.4.4", "title": "State et cycle de vie" },
+          { "page": "2.4.5", "title": "Events et forms" }
         ]
       }
     }
-  },
-  "03_Backend": {
-    "title": "Backend",
-    "subcategories": {
-      "3.1_Node.js": {
-        "title": "Node.js",
-        "articles": [
-          { "page": "3.1.1", "title": "Introduction à Node.js" },
-          { "page": "3.1.2", "title": "API Rest avec Node.js" }
-        ]
-      },
-      "3.2_PHP": {
-        "title": "PHP",
-        "articles": []
-      },
-      "3.3_Python": {
-        "title": "Python",
-        "articles": [
-          { "page": "3.3.1", "title": "Introduction à Python" },
-          { "page": "3.3.2", "title": "Flask" }
-        ]
-      }
-    }
-  },
-  "04_Database": {
-    "title": "Bases de données",
-    "subcategories": {
-      "4.1_MySQL": {
-        "title": "MySQL",
-        "articles": [
-          { "page": "4.1.1", "title": "Installation MySQL" },
-          { "page": "4.1.2", "title": "Requêtes SQL" },
-          { "page": "4.1.3", "title": "Création dump SQL" }
-        ]
-      },
-      "4.2_NoSQL": {
-        "title": "NoSQL",
-        "articles": [
-          { "page": "4.2.1", "title": "Introduction NoSQL" },
-          { "page": "4.2.2", "title": "MongoDB" }
-        ]
-      },
-      "4.3_ORM": {
-        "title": "ORM",
-        "articles": [
-          { "page": "4.3.1", "title": "Introduction ORM" },
-          { "page": "4.3.2", "title": "SQLAlchemy" }
-        ]
-      }
-    }
-  },
-  "05_DevOps": {
-    "title": "DevOps",
-    "subcategories": {
-      "5.1_Git": {
-        "title": "Git",
-        "articles": [
-          { "page": "5.1.1", "title": "Bases de Git" },
-          { "page": "5.1.2", "title": "Utilisation de GitHub" }
-        ]
-      },
-      "5.2_Conteneurisation": {
-        "title": "Conteneurisation",
-        "articles": [
-          { "page": "5.2.1", "title": "Docker" },
-          { "page": "5.2.2", "title": "Kubernetes" }
-        ]
-      },
-      "5.3_Automatisation": {
-        "title": "Automatisation",
-        "articles": [
-          { "page": "5.3.1", "title": "CI/CD" }
-        ]
-      }
-    }
-  },
-  "06_Projets": {
-    "title": "Projets",
-    "subcategories": {
-      "6.1_Projets_frontend": {
-        "title": "Projets frontend",
-        "articles": []
-      },
-      "6.2_Projets_backend": {
-        "title": "Projets backend",
-        "articles": []
-      }
-    }
-  }
+  } 
 }
