@@ -2,6 +2,12 @@
 .collapse {
 	visibility: visible !important;
 }
+.border-1,
+.border-2,
+.border-3,
+.border-4 {
+	border: initial;
+}
 /* fin init articles.css */
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
@@ -90,3 +96,27 @@ footer a:hover::after,
 	background-color: #28a745 !important;
 	color: #fff !important;
 }
+
+/* page listes articles */
+.article-list ul li a {
+	text-decoration: none;
+	padding-left: 1.2rem !important;
+	padding-left: 1rem !important;
+	transition: all 0.3s ease;
+}
+.article-list ul li a::before {
+	content: "›";
+	position: absolute;
+	left: 0;
+	font-weight: bold;
+	transition: transform 0.3s ease;
+}
+.article-list ul li a:hover {
+	color: rgba(var(--bs-success-rgb), var(--bs-text-opacity)) !important;
+	transform: translateX(3px);
+}
+
+.article-list ul li a:hover::before {
+	transform: scale(1.2);
+}
+/* fin - page listes articles */

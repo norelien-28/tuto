@@ -13,24 +13,29 @@ async function loadArticleList() {
 		for (const [catKey, category] of Object.entries(data)) {
 			const catTitle = category.title || catKey;
 			const catSection = document.createElement("div");
-			catSection.classList.add("col-12");
+			catSection.classList.add("col-12", "mb-4", "p-3", "border-start", "border-4", "border-success");
 
-			let html = `<h2 class="h4">${catTitle}</h2>`;
+			let html = `<h2 class="text-success fw-bold fs-4 border-bottom pb-1 mb-3 border-1">${catTitle}</h2>`;
 
 			if (category.subcategories) {
 				for (const [subKey, sub] of Object.entries(category.subcategories)) {
-					html += `<h3 class="h6 mt-2">${sub.title || subKey}</h3><ul>`;
+					html += `<div class="card border-0 mb-3">`;
+					html += `  <div class="card-body p-1">`;
+					html += `    <h3 class="h6 mb-2 text-success">${sub.title || subKey}</h3>`;
+					html += `    <ul class="list-unstyled ps-3 mb-0">`;
 					sub.articles.forEach((article) => {
 						const url = `index.html?cat=${catKey}&subcat=${subKey}&page=${article.page}`;
-						html += `<li><a href="${url}">${article.title}</a></li>`;
+						html += `<li><a href="${url}" class="text-dark link-underline link-underline-opacity-0 position-relative ps-4 d-inline-block">${article.title}</a></li>`;
 					});
-					html += `</ul>`;
+					html += `    </ul>`;
+					html += `  </div>`;
+					html += `</div>`;
 				}
 			} else if (category.articles) {
-				html += `<ul>`;
+				html += `<ul class="list-unstyled ps-3">`;
 				category.articles.forEach((article) => {
 					const url = `index.html?cat=${catKey}&page=${article.page}`;
-					html += `<li><a href="${url}">${article.title}</a></li>`;
+					html += `<li><a href="${url}" class="text-dark link-underline link-underline-opacity-0 position-relative ps-4 d-inline-block">${article.title}</a></li>`;
 				});
 				html += `</ul>`;
 			}
