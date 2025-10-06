@@ -77,8 +77,8 @@ async function handleRouting() {
 			content.innerHTML = html;
 			updatePageTitle({ cat, subcat, page: pageName, html });
 
-			await generateBreadcrumb({ cat, subcat, page: pageName });
 			await generateArticleNavigation({ cat, subcat, page: pageName });
+			await generateBreadcrumb({ cat, subcat, page: pageName });
 		} catch (e) {
 			content.innerHTML = `<p>❌ Cette page n'existe pas.</p>`;
 			document.title = `Page introuvable - ${SITE_NAME}`;

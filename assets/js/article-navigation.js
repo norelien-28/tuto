@@ -68,7 +68,16 @@ async function generateArticleNavigation({ cat, subcat, page }) {
 			navContainer.appendChild(nextLink);
 		}
 
-		document.querySelector("#content").appendChild(navContainer);
+		// injection des liens
+		const content = document.querySelector("#content");
+		content.appendChild(navContainer);
+		// dupplication des boutons pour le haut de page
+		const navClone = navContainer.cloneNode(true); // true = clone profond
+		// ajout classes pour les boutons en haut de page
+		navClone.classList.remove("mt-4");
+		navClone.classList.add("my-4", "border-bottom", "border-secondaire", "pb-3");
+
+		content.prepend(navClone);
 	} catch (e) {
 		console.warn("❌ Erreur navigation articles :", e);
 	}
