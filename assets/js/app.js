@@ -79,12 +79,14 @@ async function handleRouting() {
 
 			await generateArticleNavigation({ cat, subcat, page: pageName });
 			await generateBreadcrumb({ cat, subcat, page: pageName });
+
+			if (page === "articles") {
+				loadArticleList();
+			}
 		} catch (e) {
 			content.innerHTML = `<p>❌ Cette page n'existe pas.</p>`;
 			document.title = `Page introuvable - ${SITE_NAME}`;
 		}
-
-		loadArticleList();
 	}
 
 	// Si catégorie présente sans page → on affiche les articles ou sous-catégories
