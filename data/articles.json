@@ -24,16 +24,24 @@
           { "page": "02.04", "title": "Mise en page avancée" },
           { "page": "02.05", "title": "Responsive Design" }
         ]
-      }
-      ,
-      "03_JavaScript": {
+      },
+      "03_CSS_AVANCE": {
+        "title": "CSS Avancé",
+        "articles": [
+          { "page": "02.06", "title": "Introduction à Sass / SCSS" },
+          { "page": "02.07", "title": "Variables, mixins et fonctions" },
+          { "page": "02.08", "title": "Organisation du code (partials, imports)" },
+          { "page": "02.09", "title": "Méthodologies CSS (BEM, SMACSS, etc.)" }
+        ]
+      },
+      "04_JavaScript": {
         "title": "JavaScript",
         "articles": [
-          { "page": "02.06", "title": "Bases JavaScript" },
-          { "page": "02.07", "title": "Manipulation du DOM" },
-          { "page": "02.08", "title": "Fonctions avancées en JavaScript" },
-          { "page": "02.09", "title": "Promesses et async/await en JavaScript" },
-          { "page": "02.10", "title": "Bibliotheques JavaScript" }
+          { "page": "02.10", "title": "Bases JavaScript" },
+          { "page": "02.11", "title": "Manipulation du DOM" },
+          { "page": "02.12", "title": "Fonctions avancées en JavaScript" },
+          { "page": "02.13", "title": "Promesses et async/await en JavaScript" },
+          { "page": "02.14", "title": "Bibliothèques JavaScript" }
         ]
       }
     }
