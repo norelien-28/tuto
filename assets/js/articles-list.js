@@ -88,3 +88,52 @@ function createArticlesListHTML(catKey, subKey, articles) {
 	html += `</ul>`;
 	return html;
 }
+/**
+ * Charge uniquement les articles d'une catégorie spécifique.
+ * @param {string} catKey - Clé de la catégorie (ex: "02_HTML_CSS")
+ */
+async function loadCategoryArticles(catKey, subcat) {
+	const container = document.querySelector("#article-list");
+	if (!container) return;
+
+	try {
+		const basePath = getBasePath();
+		const res = await fetch(`${basePath}data/articles.json`);
+		const data = await res.json();
+
+		container.innerHTML = "";
+
+		// Récupérer la catégorie à partir des données
+		const category = data[catKey];
+		if (!category) {
+			container.innerHTML = `<p class="text-danger">Catégorie non trouvée.</p>`;
+			return;
+		}
+
+		// Si une sous-catégorie est définie, chercher dans la sous-catégorie
+		if (subcat && category.subcategories && category.subcategories[subcat]) {
+			const subCategory = category.subcategories[subcat];
+			const subCategorySection = createCategorySection(subcat, subCategory);
+			container.appendChild(subCategorySection);
+
+			// Mettre à jour le titre avec la sous-catégorie
+			const titleElement = document.querySelector("#category-title");
+			if (titleElement) {
+				titleElement.textContent = `${category.title} - ${subCategory.title || subcat}`;
+			}
+		} else {
+			// Sinon, afficher les articles de la catégorie principale
+			const catSection = createCategorySection(catKey, category);
+			container.appendChild(catSection);
+
+			// Mettre à jour le titre de la catégorie principale
+			const titleElement = document.querySelector("#category-title");
+			if (titleElement) {
+				titleElement.textContent = category.title || catKey;
+			}
+		}
+	} catch (err) {
+		container.innerHTML = `<p class="text-danger">Erreur de chargement de la catégorie.</p>`;
+		console.error("❌ Erreur JSON :", err);
+	}
+}

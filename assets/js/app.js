@@ -72,7 +72,6 @@ async function handleRouting() {
 		try {
 			const res = await fetch(path);
 			if (!res.ok) throw new Error("Page introuvable");
-
 			const html = await res.text();
 			content.innerHTML = html;
 			updatePageTitle({ cat, subcat, page: pageName, html });
@@ -82,21 +81,18 @@ async function handleRouting() {
 
 			if (page === "articles") {
 				loadArticleList();
+			} else if (page === "categorie" && cat) {
+				if (subcat) {
+					loadCategoryArticles(cat, subcat); // Charger les articles de la sous-catégorie
+				} else {
+					loadCategoryArticles(cat); // Charger les articles de la catégorie principale
+				}
 			}
 		} catch (e) {
 			content.innerHTML = `<p>❌ Cette page n'existe pas.</p>`;
 			document.title = `Page introuvable - ${SITE_NAME}`;
 		}
-	}
-
-	// Si catégorie présente sans page → on affiche les articles ou sous-catégories
-	else if (cat) {
-		await generateBreadcrumb({ cat, subcat, page: null });
-		await renderCategoryContent({ cat, subcat });
-	}
-
-	// Si ni page ni cat → on est sur la home
-	else {
+	} else {
 		await loadHomepage(); // optionnel si tu veux un comportement personnalisé
 	}
 }
@@ -106,6 +102,11 @@ async function handleRouting() {
 // --------------------------
 
 function buildContentPath(basePath, cat, subcat, page) {
+	const standalonePages = ["home", "articles", "categorie"];
+	if (standalonePages.includes(page)) {
+		return `${basePath}content/${page}.html`;
+	}
+
 	if (cat && subcat) {
 		return `${basePath}content/articles/${cat}/${subcat}/${page}.html`;
 	} else if (cat) {
@@ -120,7 +121,9 @@ function buildContentPath(basePath, cat, subcat, page) {
 // --------------------------
 
 function updatePageTitle({ cat, subcat, page, html }) {
-	if (page === "home" && !cat) {
+	// if (page === "home" && !cat) {
+	console.log("updatePageTitle - page", page);
+	if (page === "home") {
 		document.title = `Accueil - ${SITE_NAME}`;
 		return;
 	}

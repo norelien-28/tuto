@@ -133,7 +133,7 @@ async function generateBreadcrumb({ cat, subcat, page }) {
 		if (cat) {
 			const liCat = document.createElement("li");
 			liCat.className = "breadcrumb-item";
-			const catLink = createBreadcrumbLink(`index.html?cat=${cat}`, catTitle);
+			const catLink = createBreadcrumbLink(`index.html?page=categorie&cat=${cat}`, catTitle);
 			liCat.appendChild(catLink);
 			ol.appendChild(liCat);
 		}
@@ -141,7 +141,7 @@ async function generateBreadcrumb({ cat, subcat, page }) {
 		if (subcat) {
 			const liSubcat = document.createElement("li");
 			liSubcat.className = "breadcrumb-item";
-			const subcatLink = createBreadcrumbLink(`index.html?cat=${cat}&subcat=${subcat}`, subcatTitle);
+			const subcatLink = createBreadcrumbLink(`index.html?page=categorie&cat=${cat}&subcat=${subcat}`, subcatTitle);
 			liSubcat.appendChild(subcatLink);
 			ol.appendChild(liSubcat);
 		}
@@ -179,76 +179,6 @@ async function generateBreadcrumb({ cat, subcat, page }) {
 
 	breadcrumbContainer.appendChild(ol);
 	content.prepend(breadcrumbContainer);
-}
-
-/**
- * Affiche dynamiquement le contenu d'une catégorie ou sous-catégorie.
- * Liste les sous-catégories et/ou articles.
- *
- * @param {Object} options
- * @param {string} options.cat - Clé de la catégorie
- * @param {string|null} options.subcat - Clé de la sous-catégorie (facultatif)
- */
-async function renderCategoryContent({ cat, subcat = null }) {
-	const content = document.querySelector("#content");
-	if (!content) return;
-
-	try {
-		const basePath = getBasePath();
-		const res = await fetch(`${basePath}data/articles.json`);
-		const data = await res.json();
-
-		let html = "";
-
-		if (!data[cat]) {
-			content.innerHTML = `<p>❌ Catégorie introuvable</p>`;
-			return;
-		}
-
-		if (subcat) {
-			// Sous-catégorie
-			const sub = data[cat].subcategories?.[subcat];
-			if (!sub) {
-				content.innerHTML = `<p>❌ Sous-catégorie introuvable</p>`;
-				return;
-			}
-
-			html += `<h1>${sub.title || subcat}</h1><ul class="list-group mb-4">`;
-			sub.articles.forEach((article) => {
-				const url = buildArticleUrl(cat, subcat, article.page);
-				html += createArticleItem(url, article.page, article.title, true);
-			});
-			html += "</ul>";
-		} else {
-			// Catégorie
-			const category = data[cat];
-			html += `<h1>${category.title || cat}</h1>`;
-
-			if (category.subcategories) {
-				for (const [subKey, subValue] of Object.entries(category.subcategories)) {
-					html += `<h2 class="h5 mt-4">${subValue.title || subKey}</h2><ul class="list-group mb-3">`;
-					subValue.articles.forEach((article) => {
-						const url = buildArticleUrl(cat, subKey, article.page);
-						html += createArticleItem(url, article.page, article.title, true);
-					});
-					html += "</ul>";
-				}
-			} else if (category.articles) {
-				html += `<ul class="list-group mt-3">`;
-				category.articles.forEach((article) => {
-					const url = buildArticleUrl(cat, null, article.page);
-					html += createArticleItem(url, article.page, article.title, true);
-				});
-				html += "</ul>";
-			}
-		}
-
-		content.innerHTML = html;
-		await generateBreadcrumb({ cat, subcat, page: null });
-	} catch (e) {
-		console.error("❌ Erreur affichage catégorie :", e);
-		content.innerHTML = `<p>❌ Erreur lors du chargement de la catégorie</p>`;
-	}
 }
 
 /**
