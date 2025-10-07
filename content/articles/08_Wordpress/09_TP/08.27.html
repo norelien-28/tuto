@@ -1,0 +1,496 @@
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+	<p data-start="0" data-end="175">
+		Super, je te prépare un <strong data-start="24" data-end="39">kit complet</strong> de travaux pratiques WordPress, avec toutes les étapes détaillées, le
+		code à copier-coller, et des explications claires pour chaque TP.
+	</p>
+	<p data-start="177" data-end="258">Je vais organiser ça en plusieurs parties comme proposé, ça sera facile à suivre.</p>
+	<hr data-start="260" data-end="263" />
+	<h1 data-start="265" data-end="309">Kit complet de Travaux Pratiques WordPress</h1>
+	<hr data-start="311" data-end="314" />
+	<h2 data-start="316" data-end="351">TP1 – Installation et découverte</h2>
+	<h3 data-start="353" data-end="366">Objectifs</h3>
+	<ul data-start="367" data-end="497">
+		<li data-start="367" data-end="418">
+			<p data-start="369" data-end="418">Installer WordPress en local (MAMP, XAMPP, Local)</p>
+		</li>
+		<li data-start="419" data-end="459">
+			<p data-start="421" data-end="459">Découvrir l’interface d’administration</p>
+		</li>
+		<li data-start="460" data-end="497">
+			<p data-start="462" data-end="497">Créer une page et un article simple</p>
+		</li>
+	</ul>
+	<h3 data-start="499" data-end="509">Étapes</h3>
+	<ol data-start="511" data-end="1657">
+		<li data-start="511" data-end="738">
+			<p data-start="514" data-end="550"><strong data-start="514" data-end="550">Installer un environnement local</strong></p>
+			<ul data-start="554" data-end="738">
+				<li data-start="554" data-end="699">
+					<p data-start="556" data-end="699">
+						Télécharge et installe
+						<a data-start="579" data-end="609" rel="noopener" target="_new" class="decorated-link cursor-pointer"
+							>MAMP<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"
+								><svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="currentColor"
+									xmlns="http://www.w3.org/2000/svg"
+									data-rtl-flip=""
+									class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"
+								>
+									<path
+										d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"
+									></path></svg></span></a
+						>,
+						<a data-start="611" data-end="663" rel="noopener" target="_new" class="decorated-link cursor-pointer"
+							>XAMPP<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"
+								><svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="currentColor"
+									xmlns="http://www.w3.org/2000/svg"
+									data-rtl-flip=""
+									class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"
+								>
+									<path
+										d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"
+									></path></svg></span
+						></a>
+						ou
+						<a data-start="667" data-end="698" rel="noopener" target="_new" class="decorated-link cursor-pointer"
+							>LocalWP<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"
+								><svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="currentColor"
+									xmlns="http://www.w3.org/2000/svg"
+									data-rtl-flip=""
+									class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"
+								>
+									<path
+										d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"
+									></path></svg></span></a
+						>.
+					</p>
+				</li>
+				<li data-start="703" data-end="738">
+					<p data-start="705" data-end="738">Lance le serveur Apache et MySQL.</p>
+				</li>
+			</ul>
+		</li>
+		<li data-start="740" data-end="975">
+			<p data-start="743" data-end="768"><strong data-start="743" data-end="768">Télécharger WordPress</strong></p>
+			<ul data-start="772" data-end="975">
+				<li data-start="772" data-end="862">
+					<p data-start="774" data-end="862">
+						Va sur
+						<a data-start="781" data-end="829" rel="noopener" target="_new" class="decorated-link cursor-pointer"
+							>wordpress.org<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"
+								><svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="currentColor"
+									xmlns="http://www.w3.org/2000/svg"
+									data-rtl-flip=""
+									class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"
+								>
+									<path
+										d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"
+									></path></svg></span></a
+						>, télécharge la dernière version.
+					</p>
+				</li>
+				<li data-start="866" data-end="975">
+					<p data-start="868" data-end="975">
+						Décompresse et copie les fichiers dans le dossier web local (<code data-start="929" data-end="937">htdocs</code> pour XAMPP,
+						<code data-start="950" data-end="963">MAMP/htdocs</code> pour MAMP).
+					</p>
+				</li>
+			</ul>
+		</li>
+		<li data-start="977" data-end="1103">
+			<p data-start="980" data-end="1009"><strong data-start="980" data-end="1009">Créer une base de données</strong></p>
+			<ul data-start="1013" data-end="1103">
+				<li data-start="1013" data-end="1061">
+					<p data-start="1015" data-end="1061">Ouvre phpMyAdmin (ex: <code data-start="1037" data-end="1059">localhost/phpmyadmin</code>).</p>
+				</li>
+				<li data-start="1065" data-end="1103">
+					<p data-start="1067" data-end="1103">Crée une base, par exemple <code data-start="1094" data-end="1102">wp_tp1</code>.</p>
+				</li>
+			</ul>
+		</li>
+		<li data-start="1105" data-end="1322">
+			<p data-start="1108" data-end="1131"><strong data-start="1108" data-end="1131">Installer WordPress</strong></p>
+			<ul data-start="1135" data-end="1322">
+				<li data-start="1135" data-end="1199">
+					<p data-start="1137" data-end="1199">
+						Lance ton navigateur sur <code data-start="1162" data-end="1198">localhost/nom_du_dossier_wordpress</code>.
+					</p>
+				</li>
+				<li data-start="1203" data-end="1293">
+					<p data-start="1205" data-end="1293">Suis le wizard d’installation : renseigne la base de données, utilisateur, mot de passe.</p>
+				</li>
+				<li data-start="1297" data-end="1322">
+					<p data-start="1299" data-end="1322">Termine l’installation.</p>
+				</li>
+			</ul>
+		</li>
+		<li data-start="1324" data-end="1522">
+			<p data-start="1327" data-end="1345"><strong data-start="1327" data-end="1345">Créer une page</strong></p>
+			<ul data-start="1349" data-end="1522">
+				<li data-start="1349" data-end="1426">
+					<p data-start="1351" data-end="1426">
+						Connecte-toi au backoffice (<code data-start="1379" data-end="1424">localhost/nom_du_dossier_wordpress/wp-admin</code>).
+					</p>
+				</li>
+				<li data-start="1430" data-end="1456">
+					<p data-start="1432" data-end="1456">Va dans Pages &gt; Ajouter.</p>
+				</li>
+				<li data-start="1460" data-end="1509">
+					<p data-start="1462" data-end="1509">Crée une page “Bienvenue” avec un texte simple.</p>
+				</li>
+				<li data-start="1513" data-end="1522">
+					<p data-start="1515" data-end="1522">Publie.</p>
+				</li>
+			</ul>
+		</li>
+		<li data-start="1524" data-end="1657">
+			<p data-start="1527" data-end="1547"><strong data-start="1527" data-end="1547">Créer un article</strong></p>
+			<ul data-start="1551" data-end="1657">
+				<li data-start="1551" data-end="1572">
+					<p data-start="1553" data-end="1572">Articles &gt; Ajouter.</p>
+				</li>
+				<li data-start="1576" data-end="1607">
+					<p data-start="1578" data-end="1607">Titre : “Mon premier article”</p>
+				</li>
+				<li data-start="1611" data-end="1644">
+					<p data-start="1613" data-end="1644">Contenu : Un paragraphe simple.</p>
+				</li>
+				<li data-start="1648" data-end="1657">
+					<p data-start="1650" data-end="1657">Publie.</p>
+				</li>
+			</ul>
+		</li>
+	</ol>
+	<hr data-start="1659" data-end="1662" />
+	<h2 data-start="1664" data-end="1698">TP2 – Création de thème basique</h2>
+	<h3 data-start="1700" data-end="1713">Objectifs</h3>
+	<ul data-start="1714" data-end="1849">
+		<li data-start="1714" data-end="1737">
+			<p data-start="1716" data-end="1737">Créer un thème enfant</p>
+		</li>
+		<li data-start="1738" data-end="1802">
+			<p data-start="1740" data-end="1802">
+				Ajouter les fichiers <code data-start="1761" data-end="1773">header.php</code>, <code data-start="1775" data-end="1787">footer.php</code> et
+				<code data-start="1791" data-end="1802">index.php</code>
+			</p>
+		</li>
+		<li data-start="1803" data-end="1849">
+			<p data-start="1805" data-end="1849">Utiliser The Loop pour afficher les articles</p>
+		</li>
+	</ul>
+	<h3 data-start="1851" data-end="1861">Étapes</h3>
+	<ol data-start="1863" data-end="3669">
+		<li data-start="1863" data-end="1975">
+			<p data-start="1866" data-end="1907"><strong data-start="1866" data-end="1907">Créer un dossier pour le thème enfant</strong></p>
+			<ul data-start="1911" data-end="1975">
+				<li data-start="1911" data-end="1975">
+					<p data-start="1913" data-end="1975">
+						Dans <code data-start="1918" data-end="1938">wp-content/themes/</code>, crée un dossier
+						<code data-start="1956" data-end="1974">mon-theme-enfant</code>.
+					</p>
+				</li>
+			</ul>
+		</li>
+		<li data-start="1977" data-end="2164">
+			<p data-start="1980" data-end="2012">
+				<strong data-start="1980" data-end="2012">Créer le fichier <code data-start="1999" data-end="2010">style.css</code></strong>
+			</p>
+			<pre
+				class="overflow-visible!"
+				data-start="2016"
+				data-end="2102"
+			><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">css</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copier"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copier le code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-css"><span><span><span class="hljs-comment">/*
+Theme Name: Mon thème enfant
+Template: twentytwentyone
+*/</span>
+</span></span></code></div></div></pre>
+			<p data-start="2106" data-end="2164">
+				<em data-start="2106" data-end="2164">Remplace <code data-start="2116" data-end="2133">twentytwentyone</code> par le thème parent installé.</em>
+			</p>
+		</li>
+		<li data-start="2166" data-end="2448">
+			<p data-start="2169" data-end="2205">
+				<strong data-start="2169" data-end="2205">Créer le fichier <code data-start="2188" data-end="2203">functions.php</code></strong>
+			</p>
+			<pre
+				class="overflow-visible!"
+				data-start="2209"
+				data-end="2448"
+			><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">php</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copier"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copier le code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-php"><span><span><span class="hljs-meta">&lt;?php</span></span><span>
+</span><span><span class="hljs-function"><span class="hljs-keyword">function</span></span></span><span> </span><span><span class="hljs-title">mon_theme_enfant_enqueue_styles</span></span><span>(</span><span><span class="hljs-params"></span></span><span>) {
+    </span><span><span class="hljs-title function_ invoke__">wp_enqueue_style</span></span><span>(</span><span><span class="hljs-string">'parent-style'</span></span><span>, </span><span><span class="hljs-title function_ invoke__">get_template_directory_uri</span></span><span>() . </span><span><span class="hljs-string">'/style.css'</span></span><span>);
+}
+</span><span><span class="hljs-title function_ invoke__">add_action</span></span><span>(</span><span><span class="hljs-string">'wp_enqueue_scripts'</span></span><span>, </span><span><span class="hljs-string">'mon_theme_enfant_enqueue_styles'</span></span><span>);
+</span><span><span class="hljs-meta">?&gt;</span></span><span>
+</span></span></code></div></div></pre>
+		</li>
+		<li data-start="2450" data-end="2899">
+			<p data-start="2453" data-end="2475">
+				<strong data-start="2453" data-end="2475">Créer <code data-start="2461" data-end="2473">header.php</code></strong>
+			</p>
+			<pre
+				class="overflow-visible!"
+				data-start="2479"
+				data-end="2899"
+			><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">php</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copier"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copier le code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-php"><span><span>&lt;!DOCTYPE html&gt;
+&lt;html </span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">language_attributes</span></span><span>(); </span><span><span class="hljs-meta">?&gt;</span></span><span>&gt;
+&lt;head&gt;
+    &lt;meta charset=</span><span><span class="hljs-string">"&lt;?php bloginfo('charset'); ?&gt;"</span></span><span>&gt;
+    &lt;title&gt;</span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">wp_title</span></span><span>(</span><span><span class="hljs-string">'|'</span></span><span>, </span><span><span class="hljs-literal">true</span></span><span>, </span><span><span class="hljs-string">'right'</span></span><span>); </span><span><span class="hljs-meta">?&gt;</span></span><span>&lt;/title&gt;
+    </span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">wp_head</span></span><span>(); </span><span><span class="hljs-meta">?&gt;</span></span><span>
+&lt;/head&gt;
+&lt;body </span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">body_class</span></span><span>(); </span><span><span class="hljs-meta">?&gt;</span></span><span>&gt;
+&lt;header&gt;
+    &lt;h1&gt;&lt;a href=</span><span><span class="hljs-string">"&lt;?php echo home_url(); ?&gt;"</span></span><span>&gt;</span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">bloginfo</span></span><span>(</span><span><span class="hljs-string">'name'</span></span><span>); </span><span><span class="hljs-meta">?&gt;</span></span><span>&lt;/a&gt;&lt;/h1&gt;
+    &lt;nav&gt;</span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">wp_nav_menu</span></span><span>(); </span><span><span class="hljs-meta">?&gt;</span></span><span>&lt;/nav&gt;
+&lt;/header&gt;
+</span></span></code></div></div></pre>
+		</li>
+		<li data-start="2901" data-end="3080">
+			<p data-start="2904" data-end="2926">
+				<strong data-start="2904" data-end="2926">Créer <code data-start="2912" data-end="2924">footer.php</code></strong>
+			</p>
+			<pre
+				class="overflow-visible!"
+				data-start="2930"
+				data-end="3080"
+			><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">php</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copier"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copier le code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-php"><span><span>&lt;footer&gt;
+    &lt;p&gt;&amp;copy; </span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-keyword">echo</span></span><span> </span><span><span class="hljs-title function_ invoke__">date</span></span><span>(</span><span><span class="hljs-string">'Y'</span></span><span>); </span><span><span class="hljs-meta">?&gt;</span></span><span> Mon site WordPress&lt;/p&gt;
+&lt;/footer&gt;
+</span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">wp_footer</span></span><span>(); </span><span><span class="hljs-meta">?&gt;</span></span><span>
+&lt;/body&gt;
+&lt;/html&gt;
+</span></span></code></div></div></pre>
+		</li>
+		<li data-start="3082" data-end="3564">
+			<p data-start="3085" data-end="3106">
+				<strong data-start="3085" data-end="3106">Créer <code data-start="3093" data-end="3104">index.php</code></strong>
+			</p>
+			<pre
+				class="overflow-visible!"
+				data-start="3110"
+				data-end="3564"
+			><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">php</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copier"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copier le code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-php"><span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">get_header</span></span><span>(); </span><span><span class="hljs-meta">?&gt;</span></span><span>
+
+&lt;main&gt;
+</span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-keyword">if</span></span><span> ( </span><span><span class="hljs-title function_ invoke__">have_posts</span></span><span>() ) : </span><span><span class="hljs-meta">?&gt;</span></span><span>
+    </span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-keyword">while</span></span><span> ( </span><span><span class="hljs-title function_ invoke__">have_posts</span></span><span>() ) : </span><span><span class="hljs-title function_ invoke__">the_post</span></span><span>(); </span><span><span class="hljs-meta">?&gt;</span></span><span>
+        &lt;article&gt;
+            &lt;h2&gt;&lt;a href=</span><span><span class="hljs-string">"&lt;?php the_permalink(); ?&gt;"</span></span><span>&gt;</span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">the_title</span></span><span>(); </span><span><span class="hljs-meta">?&gt;</span></span><span>&lt;/a&gt;&lt;/h2&gt;
+            &lt;div&gt;</span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">the_excerpt</span></span><span>(); </span><span><span class="hljs-meta">?&gt;</span></span><span>&lt;/div&gt;
+        &lt;/article&gt;
+    </span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-keyword">endwhile</span></span><span>; </span><span><span class="hljs-meta">?&gt;</span></span><span>
+</span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-keyword">else</span></span><span> : </span><span><span class="hljs-meta">?&gt;</span></span><span>
+    &lt;p&gt;Aucun article trouvé.&lt;/p&gt;
+</span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-keyword">endif</span></span><span>; </span><span><span class="hljs-meta">?&gt;</span></span><span>
+&lt;/main&gt;
+
+</span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">get_footer</span></span><span>(); </span><span><span class="hljs-meta">?&gt;</span></span><span>
+</span></span></code></div></div></pre>
+		</li>
+		<li data-start="3566" data-end="3669">
+			<p data-start="3569" data-end="3589"><strong data-start="3569" data-end="3589">Activer le thème</strong></p>
+			<ul data-start="3593" data-end="3669">
+				<li data-start="3593" data-end="3638">
+					<p data-start="3595" data-end="3638">Dans l’admin WordPress &gt; Apparence &gt; Thèmes</p>
+				</li>
+				<li data-start="3642" data-end="3669">
+					<p data-start="3644" data-end="3669">Active “Mon thème enfant”</p>
+				</li>
+			</ul>
+		</li>
+	</ol>
+	<hr data-start="3671" data-end="3674" />
+	<h2 data-start="3676" data-end="3724">TP3 – Contenu personnalisé (Custom Post Type)</h2>
+	<h3 data-start="3726" data-end="3739">Objectifs</h3>
+	<ul data-start="3740" data-end="3876">
+		<li data-start="3740" data-end="3766">
+			<p data-start="3742" data-end="3766">Créer un CPT “Portfolio”</p>
+		</li>
+		<li data-start="3767" data-end="3835">
+			<p data-start="3769" data-end="3835">Ajouter des champs personnalisés avec Advanced Custom Fields (ACF)</p>
+		</li>
+		<li data-start="3836" data-end="3876">
+			<p data-start="3838" data-end="3876">Créer un template pour afficher le CPT</p>
+		</li>
+	</ul>
+	<h3 data-start="3878" data-end="3888">Étapes</h3>
+	<ol data-start="3890" data-end="5464">
+		<li data-start="3890" data-end="4392">
+			<p data-start="3893" data-end="3946">
+				<strong data-start="3893" data-end="3946"
+					>Créer le CPT dans <code data-start="3913" data-end="3928">functions.php</code> du thème enfant</strong
+				>
+			</p>
+			<pre
+				class="overflow-visible!"
+				data-start="3950"
+				data-end="4392"
+			><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">php</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copier"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copier le code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-php"><span><span><span class="hljs-function"><span class="hljs-keyword">function</span></span></span><span> </span><span><span class="hljs-title">mon_theme_register_cpt</span></span><span>(</span><span><span class="hljs-params"></span></span><span>) {
+    </span><span><span class="hljs-variable">$args</span></span><span> = </span><span><span class="hljs-keyword">array</span></span><span>(
+        </span><span><span class="hljs-string">'labels'</span></span><span> =&gt; </span><span><span class="hljs-keyword">array</span></span><span>(
+            </span><span><span class="hljs-string">'name'</span></span><span> =&gt; </span><span><span class="hljs-string">'Portfolios'</span></span><span>,
+            </span><span><span class="hljs-string">'singular_name'</span></span><span> =&gt; </span><span><span class="hljs-string">'Portfolio'</span></span><span>,
+        ),
+        </span><span><span class="hljs-string">'public'</span></span><span> =&gt; </span><span><span class="hljs-literal">true</span></span><span>,
+        </span><span><span class="hljs-string">'has_archive'</span></span><span> =&gt; </span><span><span class="hljs-literal">true</span></span><span>,
+        </span><span><span class="hljs-string">'supports'</span></span><span> =&gt; </span><span><span class="hljs-keyword">array</span></span><span>(</span><span><span class="hljs-string">'title'</span></span><span>, </span><span><span class="hljs-string">'editor'</span></span><span>, </span><span><span class="hljs-string">'thumbnail'</span></span><span>),
+    );
+    </span><span><span class="hljs-title function_ invoke__">register_post_type</span></span><span>(</span><span><span class="hljs-string">'portfolio'</span></span><span>, </span><span><span class="hljs-variable">$args</span></span><span>);
+}
+</span><span><span class="hljs-title function_ invoke__">add_action</span></span><span>(</span><span><span class="hljs-string">'init'</span></span><span>, </span><span><span class="hljs-string">'mon_theme_register_cpt'</span></span><span>);
+</span></span></code></div></div></pre>
+		</li>
+		<li data-start="4394" data-end="4535">
+			<p data-start="4397" data-end="4435"><strong data-start="4397" data-end="4435">Installer et activer le plugin ACF</strong></p>
+			<ul data-start="4439" data-end="4535">
+				<li data-start="4439" data-end="4535">
+					<p data-start="4441" data-end="4535">
+						Dans admin WP &gt; Extensions &gt; Ajouter &gt; Cherche “Advanced Custom Fields” &gt; Installer &gt; Activer.
+					</p>
+				</li>
+			</ul>
+		</li>
+		<li data-start="4537" data-end="4715">
+			<p data-start="4540" data-end="4574"><strong data-start="4540" data-end="4574">Créer des champs personnalisés</strong></p>
+			<ul data-start="4578" data-end="4715">
+				<li data-start="4578" data-end="4632">
+					<p data-start="4580" data-end="4632">Admin WP &gt; Champs personnalisés &gt; Ajouter un groupe.</p>
+				</li>
+				<li data-start="4636" data-end="4715">
+					<p data-start="4638" data-end="4715">Par exemple : “Lien projet”, “Date de réalisation”, “Technologies utilisées”.</p>
+				</li>
+			</ul>
+		</li>
+		<li data-start="4717" data-end="5404">
+			<p data-start="4720" data-end="4797">
+				<strong data-start="4720" data-end="4797"
+					>Créer un template pour le CPT <code data-start="4752" data-end="4774">single-portfolio.php</code> dans le thème enfant</strong
+				>
+			</p>
+			<pre
+				class="overflow-visible!"
+				data-start="4801"
+				data-end="5404"
+			><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">php</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copier"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copier le code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-php"><span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">get_header</span></span><span>(); </span><span><span class="hljs-meta">?&gt;</span></span><span>
+
+&lt;main&gt;
+    </span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-keyword">if</span></span><span> ( </span><span><span class="hljs-title function_ invoke__">have_posts</span></span><span>() ) : </span><span><span class="hljs-keyword">while</span></span><span> ( </span><span><span class="hljs-title function_ invoke__">have_posts</span></span><span>() ) : </span><span><span class="hljs-title function_ invoke__">the_post</span></span><span>(); </span><span><span class="hljs-meta">?&gt;</span></span><span>
+        &lt;article&gt;
+            &lt;h1&gt;</span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">the_title</span></span><span>(); </span><span><span class="hljs-meta">?&gt;</span></span><span>&lt;/h1&gt;
+            &lt;div&gt;</span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">the_content</span></span><span>(); </span><span><span class="hljs-meta">?&gt;</span></span><span>&lt;/div&gt;
+            &lt;p&gt;Lien : &lt;a href=</span><span><span class="hljs-string">"&lt;?php the_field('lien_projet'); ?&gt;"</span></span><span>&gt;</span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">the_field</span></span><span>(</span><span><span class="hljs-string">'lien_projet'</span></span><span>); </span><span><span class="hljs-meta">?&gt;</span></span><span>&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;Date : </span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">the_field</span></span><span>(</span><span><span class="hljs-string">'date_de_realisation'</span></span><span>); </span><span><span class="hljs-meta">?&gt;</span></span><span>&lt;/p&gt;
+            &lt;p&gt;Technologies : </span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">the_field</span></span><span>(</span><span><span class="hljs-string">'technologies_utilisees'</span></span><span>); </span><span><span class="hljs-meta">?&gt;</span></span><span>&lt;/p&gt;
+        &lt;/article&gt;
+    </span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-keyword">endwhile</span></span><span>; </span><span><span class="hljs-keyword">endif</span></span><span>; </span><span><span class="hljs-meta">?&gt;</span></span><span>
+&lt;/main&gt;
+
+</span><span><span class="hljs-meta">&lt;?php</span></span><span> </span><span><span class="hljs-title function_ invoke__">get_footer</span></span><span>(); </span><span><span class="hljs-meta">?&gt;</span></span><span>
+</span></span></code></div></div></pre>
+		</li>
+		<li data-start="5406" data-end="5464">
+			<p data-start="5409" data-end="5464">
+				<strong data-start="5409" data-end="5464"
+					>Créer une archive <code data-start="5429" data-end="5452">archive-portfolio.php</code> si besoin</strong
+				>
+			</p>
+		</li>
+	</ol>
+	<hr data-start="5466" data-end="5469" />
+	<h2 data-start="5471" data-end="5506">TP4 – Plugins et fonctionnalités</h2>
+	<h3 data-start="5508" data-end="5521">Objectifs</h3>
+	<ul data-start="5522" data-end="5607">
+		<li data-start="5522" data-end="5546">
+			<p data-start="5524" data-end="5546">Créer un plugin simple</p>
+		</li>
+		<li data-start="5547" data-end="5569">
+			<p data-start="5549" data-end="5569">Ajouter un shortcode</p>
+		</li>
+		<li data-start="5570" data-end="5607">
+			<p data-start="5572" data-end="5607">Utiliser un hook (action ou filtre)</p>
+		</li>
+	</ul>
+	<h3 data-start="5609" data-end="5619">Étapes</h3>
+	<ol data-start="5621" data-end="6442">
+		<li data-start="5621" data-end="5681">
+			<p data-start="5624" data-end="5681">
+				<strong data-start="5624" data-end="5681"
+					>Créer un dossier dans <code data-start="5648" data-end="5679">wp-content/plugins/mon-plugin</code></strong
+				>
+			</p>
+		</li>
+		<li data-start="5683" data-end="6337">
+			<p data-start="5686" data-end="5723">
+				<strong data-start="5686" data-end="5723">Créer un fichier <code data-start="5705" data-end="5721">mon-plugin.php</code></strong>
+			</p>
+			<pre
+				class="overflow-visible!"
+				data-start="5727"
+				data-end="6337"
+			><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">php</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copier"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copier le code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-php"><span><span><span class="hljs-meta">&lt;?php</span></span><span>
+<span class="hljs-comment">/*
+Plugin Name: Mon Plugin Simple
+Description: Plugin de test pour apprendre les bases.
+Version: 1.0
+Author: Moi
+*/</span>
+
+</span><span><span class="hljs-comment">// Shortcode [bonjour]</span></span><span>
+</span><span><span class="hljs-function"><span class="hljs-keyword">function</span></span></span><span> </span><span><span class="hljs-title">mp_bonjour_shortcode</span></span><span>(</span><span><span class="hljs-params"></span></span><span>) {
+    </span><span><span class="hljs-keyword">return</span></span><span> </span><span><span class="hljs-string">"&lt;p&gt;Bonjour, bienvenue sur mon site !&lt;/p&gt;"</span></span><span>;
+}
+</span><span><span class="hljs-title function_ invoke__">add_shortcode</span></span><span>(</span><span><span class="hljs-string">'bonjour'</span></span><span>, </span><span><span class="hljs-string">'mp_bonjour_shortcode'</span></span><span>);
+
+</span><span><span class="hljs-comment">// Ajouter un message après chaque contenu d'article</span></span><span>
+</span><span><span class="hljs-function"><span class="hljs-keyword">function</span></span></span><span> </span><span><span class="hljs-title">mp_ajouter_message</span></span><span>(</span><span><span class="hljs-params"><span class="hljs-variable">$content</span></span></span><span>) {
+    </span><span><span class="hljs-keyword">if</span></span><span> (</span><span><span class="hljs-title function_ invoke__">is_single</span></span><span>()) {
+        </span><span><span class="hljs-variable">$content</span></span><span> .= </span><span><span class="hljs-string">"&lt;p&gt;Merci de votre lecture !&lt;/p&gt;"</span></span><span>;
+    }
+    </span><span><span class="hljs-keyword">return</span></span><span> </span><span><span class="hljs-variable">$content</span></span><span>;
+}
+</span><span><span class="hljs-title function_ invoke__">add_filter</span></span><span>(</span><span><span class="hljs-string">'the_content'</span></span><span>, </span><span><span class="hljs-string">'mp_ajouter_message'</span></span><span>);
+</span></span></code></div></div></pre>
+		</li>
+		<li data-start="6339" data-end="6376">
+			<p data-start="6342" data-end="6376"><strong data-start="6342" data-end="6376">Activer le plugin dans l’admin</strong></p>
+		</li>
+		<li data-start="6378" data-end="6442">
+			<p data-start="6381" data-end="6442">
+				<strong data-start="6381" data-end="6425">Tester le shortcode dans une page/post :</strong><br data-start="6425" data-end="6428" />
+				<code data-start="6431" data-end="6442">[bonjour]</code>
+			</p>
+		</li>
+	</ol>
+	<hr data-start="6444" data-end="6447" />
+	<h2 data-start="6449" data-end="6481">TP5 – WooCommerce (optionnel)</h2>
+	<p data-start="6483" data-end="6589">
+		<em data-start="6483" data-end="6589">Je te prépare aussi celui-là si tu veux, il y aura l’installation, gestion des produits, commandes, etc.</em>
+	</p>
+	<hr data-start="6591" data-end="6594" />
+	<h2 data-start="6596" data-end="6644">TP6 – API REST et Headless WordPress (avancé)</h2>
+	<p data-start="6646" data-end="6752">
+		<em data-start="6646" data-end="6752">Je peux aussi te préparer un exemple complet pour consommer l’API WP avec React ou Vue, si tu souhaites.</em>
+	</p>
+	<hr data-start="6754" data-end="6757" />
+	<hr data-start="6759" data-end="6762" />
+	<p data-start="6764" data-end="6918" data-is-last-node="" data-is-only-node="">
+		Veux-tu que je t’envoie chaque TP complet un par un ? Ou tout d’un coup dans un seul document ?<br data-start="6859" data-end="6862" />
+		Et aussi, quels TP t’intéressent le plus pour démarrer ?
+	</p>
+</div>

@@ -1,0 +1,132 @@
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+	<h1 data-start="135" data-end="190">08.16 – Sauvegardes, mises à jour et bonnes pratiques</h1>
+	<h2 data-start="192" data-end="207">Introduction</h2>
+	<p data-start="209" data-end="441">
+		La maintenance régulière d’un site WordPress est essentielle pour garantir sa sécurité, sa performance et sa pérennité. Cela passe principalement par
+		les sauvegardes et les mises à jour, ainsi que par l’adoption de bonnes pratiques.
+	</p>
+	<hr data-start="443" data-end="446" />
+	<h2 data-start="448" data-end="486">1. Pourquoi faire des sauvegardes ?</h2>
+	<p data-start="488" data-end="577">Les sauvegardes permettent de restaurer ton site en cas de problème majeur, par exemple :</p>
+	<ul data-start="579" data-end="712">
+		<li data-start="579" data-end="613">
+			<p data-start="581" data-end="613">Piratage ou injection de malware</p>
+		</li>
+		<li data-start="614" data-end="645">
+			<p data-start="616" data-end="645">Erreur lors d’une mise à jour</p>
+		</li>
+		<li data-start="646" data-end="674">
+			<p data-start="648" data-end="674">Problème technique serveur</p>
+		</li>
+		<li data-start="675" data-end="712">
+			<p data-start="677" data-end="712">Suppression accidentelle de contenu</p>
+		</li>
+	</ul>
+	<hr data-start="714" data-end="717" />
+	<h2 data-start="719" data-end="743">2. Quoi sauvegarder ?</h2>
+	<ul data-start="745" data-end="882">
+		<li data-start="745" data-end="818">
+			<p data-start="747" data-end="818">La base de données (contient tout le contenu, utilisateurs, paramètres)</p>
+		</li>
+		<li data-start="819" data-end="882">
+			<p data-start="821" data-end="882">Les fichiers du site (thèmes, plugins, médias, configuration)</p>
+		</li>
+	</ul>
+	<hr data-start="884" data-end="887" />
+	<h2 data-start="889" data-end="920">3. Fréquence des sauvegardes</h2>
+	<ul data-start="922" data-end="1087">
+		<li data-start="922" data-end="1009">
+			<p data-start="924" data-end="1009">
+				Pour un site dynamique ou souvent mis à jour : <strong data-start="971" data-end="987">quotidiennes</strong> voire plus fréquentes
+			</p>
+		</li>
+		<li data-start="1010" data-end="1087">
+			<p data-start="1012" data-end="1087">
+				Pour un site statique ou peu mis à jour : <strong data-start="1054" data-end="1071">hebdomadaires</strong> peuvent suffire
+			</p>
+		</li>
+	</ul>
+	<hr data-start="1089" data-end="1092" />
+	<h2 data-start="1094" data-end="1122">4. Méthodes de sauvegarde</h2>
+	<h3 data-start="1124" data-end="1153">4.1 Plugins de sauvegarde</h3>
+	<ul data-start="1155" data-end="1370">
+		<li data-start="1155" data-end="1255">
+			<p data-start="1157" data-end="1255">
+				<strong data-start="1157" data-end="1172">UpdraftPlus</strong> : facile à configurer, sauvegardes automatiques sur cloud (Dropbox, Google
+				Drive…)
+			</p>
+		</li>
+		<li data-start="1256" data-end="1330">
+			<p data-start="1258" data-end="1330">
+				<strong data-start="1258" data-end="1270">BackWPup</strong> : sauvegardes multiples, export vers plusieurs destinations
+			</p>
+		</li>
+		<li data-start="1331" data-end="1370">
+			<p data-start="1333" data-end="1370"><strong data-start="1333" data-end="1344">WPvivid</strong> : sauvegarde et migration</p>
+		</li>
+	</ul>
+	<h3 data-start="1372" data-end="1401">4.2 Sauvegardes manuelles</h3>
+	<ul data-start="1403" data-end="1481">
+		<li data-start="1403" data-end="1448">
+			<p data-start="1405" data-end="1448">Export de la base de données via phpMyAdmin</p>
+		</li>
+		<li data-start="1449" data-end="1481">
+			<p data-start="1451" data-end="1481">Copie FTP des fichiers du site</p>
+		</li>
+	</ul>
+	<hr data-start="1483" data-end="1486" />
+	<h2 data-start="1488" data-end="1516">5. Mises à jour WordPress</h2>
+	<h3 data-start="1518" data-end="1551">5.1 Mises à jour automatiques</h3>
+	<p data-start="1553" data-end="1616">WordPress permet d’activer les mises à jour automatiques pour :</p>
+	<ul data-start="1618" data-end="1664">
+		<li data-start="1618" data-end="1637">
+			<p data-start="1620" data-end="1637">Le cœur WordPress</p>
+		</li>
+		<li data-start="1638" data-end="1651">
+			<p data-start="1640" data-end="1651">Les plugins</p>
+		</li>
+		<li data-start="1652" data-end="1664">
+			<p data-start="1654" data-end="1664">Les thèmes</p>
+		</li>
+	</ul>
+	<p data-start="1666" data-end="1720">Cela réduit les risques liés à des versions obsolètes.</p>
+	<h3 data-start="1722" data-end="1752">5.2 Mises à jour manuelles</h3>
+	<ul data-start="1754" data-end="1949">
+		<li data-start="1754" data-end="1827">
+			<p data-start="1756" data-end="1827">
+				Avant chaque mise à jour majeure, <strong data-start="1790" data-end="1826">effectue une sauvegarde complète</strong>.
+			</p>
+		</li>
+		<li data-start="1828" data-end="1895">
+			<p data-start="1830" data-end="1895">Teste la mise à jour sur un environnement de staging si possible.</p>
+		</li>
+		<li data-start="1896" data-end="1949">
+			<p data-start="1898" data-end="1949">Surveille les compatibilités des plugins et thèmes.</p>
+		</li>
+	</ul>
+	<hr data-start="1951" data-end="1954" />
+	<h2 data-start="1956" data-end="1994">6. Bonnes pratiques supplémentaires</h2>
+	<ul data-start="1996" data-end="2336">
+		<li data-start="1996" data-end="2089">
+			<p data-start="1998" data-end="2089">Utilise un environnement de développement local ou staging avant de déployer en production.</p>
+		</li>
+		<li data-start="2090" data-end="2134">
+			<p data-start="2092" data-end="2134">Supprime les plugins et thèmes inutilisés.</p>
+		</li>
+		<li data-start="2135" data-end="2213">
+			<p data-start="2137" data-end="2213">Optimise la base de données régulièrement (ex : avec le plugin WP-Optimize).</p>
+		</li>
+		<li data-start="2214" data-end="2279">
+			<p data-start="2216" data-end="2279">Surveille les performances avec des outils comme Query Monitor.</p>
+		</li>
+		<li data-start="2280" data-end="2336">
+			<p data-start="2282" data-end="2336">Documente tes procédures de sauvegarde et mise à jour.</p>
+		</li>
+	</ul>
+	<hr data-start="2338" data-end="2341" />
+	<h2 data-start="2343" data-end="2356">Conclusion</h2>
+	<p data-start="2358" data-end="2581">
+		La régularité et la rigueur dans la sauvegarde et la mise à jour sont la clé pour maintenir un site WordPress sécurisé et performant. Automatiser ces
+		tâches autant que possible réduit les risques et te fait gagner du temps.
+	</p>
+</div>

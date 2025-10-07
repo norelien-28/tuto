@@ -1,0 +1,163 @@
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+	<h1 data-start="127" data-end="172">08.17 – Déployer un site WordPress en ligne</h1>
+	<h2 data-start="174" data-end="189">Introduction</h2>
+	<p data-start="191" data-end="436">
+		Déployer un site WordPress en ligne consiste à transférer ton site depuis un environnement local (ordinateur personnel) vers un hébergement web
+		accessible publiquement. Cette étape est cruciale pour rendre ton site visible par tous sur Internet.
+	</p>
+	<hr data-start="438" data-end="441" />
+	<h2 data-start="443" data-end="492">1. Préparer son site local pour le déploiement</h2>
+	<ul data-start="494" data-end="711">
+		<li data-start="494" data-end="565">
+			<p data-start="496" data-end="565">Vérifie que tout fonctionne correctement (thèmes, plugins, contenus).</p>
+		</li>
+		<li data-start="566" data-end="630">
+			<p data-start="568" data-end="630">Effectue une sauvegarde complète (fichiers + base de données).</p>
+		</li>
+		<li data-start="631" data-end="711">
+			<p data-start="633" data-end="711">Nettoie le site en supprimant les éléments inutiles (plugins, thèmes, médias).</p>
+		</li>
+	</ul>
+	<hr data-start="713" data-end="716" />
+	<h2 data-start="718" data-end="750">2. Choisir un hébergement web</h2>
+	<ul data-start="752" data-end="950">
+		<li data-start="752" data-end="814">
+			<p data-start="754" data-end="814">Hébergement mutualisé : économique, adapté aux petits sites.</p>
+		</li>
+		<li data-start="815" data-end="873">
+			<p data-start="817" data-end="873">Hébergement VPS/dédié : plus de contrôle et performance.</p>
+		</li>
+		<li data-start="874" data-end="950">
+			<p data-start="876" data-end="950">Hébergement spécialisé WordPress : optimisé pour WP, avec services inclus.</p>
+		</li>
+	</ul>
+	<hr data-start="952" data-end="955" />
+	<h2 data-start="957" data-end="986">3. Transférer les fichiers</h2>
+	<h3 data-start="988" data-end="1008">3.1 Via FTP/SFTP</h3>
+	<ul data-start="1010" data-end="1224">
+		<li data-start="1010" data-end="1065">
+			<p data-start="1012" data-end="1065">Utilise un client FTP (FileZilla, Cyberduck, WinSCP).</p>
+		</li>
+		<li data-start="1066" data-end="1099">
+			<p data-start="1068" data-end="1099">Connecte-toi à ton hébergement.</p>
+		</li>
+		<li data-start="1100" data-end="1224">
+			<p data-start="1102" data-end="1224">
+				Transfère tous les fichiers WordPress (depuis le dossier local) vers le dossier racine du serveur (souvent
+				<code data-start="1209" data-end="1222">public_html</code>).
+			</p>
+		</li>
+	</ul>
+	<h3 data-start="1226" data-end="1272">3.2 Via cPanel ou gestionnaire de fichiers</h3>
+	<ul data-start="1274" data-end="1439">
+		<li data-start="1274" data-end="1364">
+			<p data-start="1276" data-end="1364">Certains hébergeurs proposent un gestionnaire de fichiers dans leur panneau de contrôle.</p>
+		</li>
+		<li data-start="1365" data-end="1439">
+			<p data-start="1367" data-end="1439">Tu peux y uploader un archive ZIP de ton site et l’extraire directement.</p>
+		</li>
+	</ul>
+	<hr data-start="1441" data-end="1444" />
+	<h2 data-start="1446" data-end="1491">4. Exporter et importer la base de données</h2>
+	<h3 data-start="1493" data-end="1524">4.1 Exporter la base locale</h3>
+	<ul data-start="1526" data-end="1615">
+		<li data-start="1526" data-end="1570">
+			<p data-start="1528" data-end="1570">Utilise phpMyAdmin ou un outil équivalent.</p>
+		</li>
+		<li data-start="1571" data-end="1615">
+			<p data-start="1573" data-end="1615">Export au format SQL de la base WordPress.</p>
+		</li>
+	</ul>
+	<h3 data-start="1617" data-end="1648">4.2 Importer sur le serveur</h3>
+	<ul data-start="1650" data-end="1781">
+		<li data-start="1650" data-end="1721">
+			<p data-start="1652" data-end="1721">Crée une base de données sur ton hébergement via cPanel ou interface.</p>
+		</li>
+		<li data-start="1722" data-end="1781">
+			<p data-start="1724" data-end="1781">Importe le fichier SQL via phpMyAdmin ou outil similaire.</p>
+		</li>
+	</ul>
+	<hr data-start="1783" data-end="1786" />
+	<h2 data-start="1788" data-end="1829">5. Modifier le fichier <code data-start="1814" data-end="1829">wp-config.php</code></h2>
+	<ul data-start="1831" data-end="1992">
+		<li data-start="1831" data-end="1945">
+			<p data-start="1833" data-end="1945">
+				Mets à jour les informations de connexion à la base de données (<code data-start="1897" data-end="1906">DB_NAME</code>,
+				<code data-start="1908" data-end="1917">DB_USER</code>, <code data-start="1919" data-end="1932">DB_PASSWORD</code>,
+				<code data-start="1934" data-end="1943">DB_HOST</code>).
+			</p>
+		</li>
+		<li data-start="1946" data-end="1992">
+			<p data-start="1948" data-end="1992">Vérifie les autres constantes si nécessaire.</p>
+		</li>
+	</ul>
+	<hr data-start="1994" data-end="1997" />
+	<h2 data-start="1999" data-end="2035">6. Mettre à jour les URLs du site</h2>
+	<ul data-start="2037" data-end="2412">
+		<li data-start="2037" data-end="2148">
+			<p data-start="2039" data-end="2148">
+				Si l’URL locale et celle en ligne diffèrent, il faut mettre à jour la base pour refléter la nouvelle adresse.
+			</p>
+		</li>
+		<li data-start="2149" data-end="2412">
+			<p data-start="2151" data-end="2171">Plusieurs méthodes :</p>
+			<ul data-start="2174" data-end="2412">
+				<li data-start="2174" data-end="2282">
+					<p data-start="2176" data-end="2282">
+						Utiliser un plugin comme <strong data-start="2201" data-end="2226">Better Search Replace</strong> pour remplacer l’URL locale par l’URL
+						du site en ligne.
+					</p>
+				</li>
+				<li data-start="2285" data-end="2327">
+					<p data-start="2287" data-end="2327">Exécuter une requête SQL via phpMyAdmin.</p>
+				</li>
+				<li data-start="2330" data-end="2412">
+					<p data-start="2332" data-end="2412">
+						Modifier directement les options <code data-start="2365" data-end="2374">siteurl</code> et
+						<code data-start="2378" data-end="2384">home</code> dans la table <code data-start="2399" data-end="2411">wp_options</code>.
+					</p>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<hr data-start="2414" data-end="2417" />
+	<h2 data-start="2419" data-end="2455">7. Vérifications post-déploiement</h2>
+	<ul data-start="2457" data-end="2685">
+		<li data-start="2457" data-end="2504">
+			<p data-start="2459" data-end="2504">Teste le site en ligne sur différentes pages.</p>
+		</li>
+		<li data-start="2505" data-end="2554">
+			<p data-start="2507" data-end="2554">Vérifie les liens, les médias, les formulaires.</p>
+		</li>
+		<li data-start="2555" data-end="2616">
+			<p data-start="2557" data-end="2616">Teste les fonctionnalités de connexion et d’administration.</p>
+		</li>
+		<li data-start="2617" data-end="2685">
+			<p data-start="2619" data-end="2685">
+				Supprime ou protège les fichiers sensibles (ex : <code data-start="2668" data-end="2683">wp-config.php</code>).
+			</p>
+		</li>
+	</ul>
+	<hr data-start="2687" data-end="2690" />
+	<h2 data-start="2692" data-end="2738">8. Configurations supplémentaires possibles</h2>
+	<ul data-start="2740" data-end="2918">
+		<li data-start="2740" data-end="2778">
+			<p data-start="2742" data-end="2778">Installer un certificat SSL (HTTPS).</p>
+		</li>
+		<li data-start="2779" data-end="2821">
+			<p data-start="2781" data-end="2821">Configurer les sauvegardes automatiques.</p>
+		</li>
+		<li data-start="2822" data-end="2877">
+			<p data-start="2824" data-end="2877">Mettre en place des outils de monitoring et sécurité.</p>
+		</li>
+		<li data-start="2878" data-end="2918">
+			<p data-start="2880" data-end="2918">Optimiser la performance (cache, CDN).</p>
+		</li>
+	</ul>
+	<hr data-start="2920" data-end="2923" />
+	<h2 data-start="2925" data-end="2938">Conclusion</h2>
+	<p data-start="2940" data-end="3214">
+		Le déploiement d’un site WordPress en ligne demande une préparation rigoureuse, une bonne maîtrise des outils de transfert et une attention particulière
+		aux configurations. Une fois réalisé correctement, ton site sera accessible, sécurisé et prêt à accueillir ses visiteurs.
+	</p>
+</div>

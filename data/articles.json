@@ -138,13 +138,73 @@
       }
     }
   },
-  "08_Wordpress": {
-    "title": "Wordpress",
+  "08_WordPress": {
+    "title": "WordPress",
     "subcategories": {
-      "01_Bases": {
-        "title": "Bases",
+      "01_Intro_Installation": {
+        "title": "Introduction & Installation",
         "articles": [
-          { "page": "8.1", "title": "Introduction" }
+          { "page": "08.01", "title": "Introduction à WordPress" },
+          { "page": "08.02", "title": "Installer WordPress en local (MAMP, XAMPP, Local)" },
+          { "page": "08.03", "title": "Structure des fichiers WordPress" }
+        ]
+      },
+      "02_Themes": {
+        "title": "Création de Thèmes",
+        "articles": [
+          { "page": "08.04", "title": "Créer un thème WordPress personnalisé" },
+          { "page": "08.05", "title": "Les fichiers de base : header, footer, index" },
+          { "page": "08.06", "title": "Comprendre et utiliser The Loop" },
+          { "page": "08.07", "title": "Ajouter des styles et scripts correctement" }
+        ]
+      },
+      "03_Contenu_Personnalise": {
+        "title": "Contenu Personnalisé",
+        "articles": [
+          { "page": "08.08", "title": "Créer un Custom Post Type (CPT)" },
+          { "page": "08.09", "title": "Utiliser Advanced Custom Fields (ACF)" },
+          { "page": "08.10", "title": "Créer des templates pour les CPT" }
+        ]
+      },
+      "04_PlugIns_Fonctions": {
+        "title": "Plugins & Fonctionnalités",
+        "articles": [
+          { "page": "08.11", "title": "Créer un plugin WordPress simple" },
+          { "page": "08.12", "title": "Hooks : actions et filtres" },
+          { "page": "08.13", "title": "Créer et utiliser des shortcodes" },
+          { "page": "08.14", "title": "Personnaliser les rôles et permissions" }
+        ]
+      },
+      "05_Securite_Deployment": {
+        "title": "Sécurité & Déploiement",
+        "articles": [
+          { "page": "08.15", "title": "Sécuriser son site WordPress" },
+          { "page": "08.16", "title": "Sauvegardes, mises à jour et bonnes pratiques" },
+          { "page": "08.17", "title": "Déployer un site WordPress en ligne" }
+        ]
+      },
+      "06_Utilisation_BackOffice": {
+        "title": "Utilisation de l'administration",
+        "articles": [
+          { "page": "08.18", "title": "Créer des pages, articles et menus" },
+          { "page": "08.19", "title": "Utiliser Gutenberg (éditeur de blocs)" },
+          { "page": "08.20", "title": "Gérer les médias, catégories, commentaires" }
+        ]
+      },
+      "07_WooCommerce": {
+        "title": "WooCommerce",
+        "articles": [
+          { "page": "08.21", "title": "Installer et configurer WooCommerce" },
+          { "page": "08.22", "title": "Gérer les produits, commandes et paiements" },
+          { "page": "08.23", "title": "Personnaliser WooCommerce via thèmes et hooks" }
+        ]
+      },
+      "08_Avance_API": {
+        "title": "Développement avancé & API",
+        "articles": [
+          { "page": "08.24", "title": "Découvrir l'API REST de WordPress" },
+          { "page": "08.25", "title": "Créer des endpoints personnalisés" },
+          { "page": "08.26", "title": "Headless WordPress : utiliser WP avec React/Vue" }
         ]
       }
     }

@@ -1,0 +1,299 @@
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+	<h1 data-start="121" data-end="172">Installer WordPress en local (MAMP, XAMPP, Local)</h1>
+	<h2 data-start="174" data-end="189">Introduction</h2>
+	<p data-start="191" data-end="464">
+		Travailler sur WordPress en local est une étape essentielle pour développer, tester et personnaliser un site sans impacter un site en production.
+		Plusieurs outils permettent d’installer un environnement de serveur local facilement : MAMP, XAMPP ou encore Local by Flywheel.
+	</p>
+	<hr data-start="466" data-end="469" />
+	<h2 data-start="471" data-end="516">1. Pourquoi installer WordPress en local ?</h2>
+	<ul data-start="518" data-end="703">
+		<li data-start="518" data-end="567">
+			<p data-start="520" data-end="567">Développer un site WordPress en toute sécurité.</p>
+		</li>
+		<li data-start="568" data-end="626">
+			<p data-start="570" data-end="626">Tester des thèmes, plugins, ou mises à jour sans risque.</p>
+		</li>
+		<li data-start="627" data-end="664">
+			<p data-start="629" data-end="664">Travailler sans connexion internet.</p>
+		</li>
+		<li data-start="665" data-end="703">
+			<p data-start="667" data-end="703">Gain de temps lors du développement.</p>
+		</li>
+	</ul>
+	<hr data-start="705" data-end="708" />
+	<h2 data-start="710" data-end="729">2. Les prérequis</h2>
+	<ul data-start="731" data-end="929">
+		<li data-start="731" data-end="771">
+			<p data-start="733" data-end="771">Un ordinateur Windows, macOS ou Linux.</p>
+		</li>
+		<li data-start="772" data-end="827">
+			<p data-start="774" data-end="827">Un logiciel de serveur local (MAMP, XAMPP, ou Local).</p>
+		</li>
+		<li data-start="828" data-end="929">
+			<p data-start="830" data-end="929">
+				La dernière version de WordPress (disponible sur
+				<a data-start="879" data-end="927" rel="noopener" target="_new" class="decorated-link cursor-pointer"
+					>wordpress.org<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"
+						><svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
+							data-rtl-flip=""
+							class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"
+						>
+							<path
+								d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"
+							></path></svg></span></a
+				>).
+			</p>
+		</li>
+	</ul>
+	<hr data-start="931" data-end="934" />
+	<h2 data-start="936" data-end="971">3. Installer WordPress avec MAMP</h2>
+	<h3 data-start="973" data-end="1016">Étape 1 : Télécharger et installer MAMP</h3>
+	<ul data-start="1018" data-end="1177">
+		<li data-start="1018" data-end="1077">
+			<p data-start="1020" data-end="1077">
+				Rendez-vous sur le site officiel :
+				<a data-start="1055" data-end="1077" rel="noopener" target="_new" class="decorated-link cursor-pointer"
+					>https://www.mamp.info/<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"
+						><svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
+							data-rtl-flip=""
+							class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"
+						>
+							<path
+								d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"
+							></path></svg></span
+				></a>
+			</p>
+		</li>
+		<li data-start="1078" data-end="1131">
+			<p data-start="1080" data-end="1131">Téléchargez la version gratuite adaptée à votre OS.</p>
+		</li>
+		<li data-start="1132" data-end="1177">
+			<p data-start="1134" data-end="1177">Installez MAMP en suivant les instructions.</p>
+		</li>
+	</ul>
+	<h3 data-start="1179" data-end="1212">Étape 2 : Démarrer le serveur</h3>
+	<ul data-start="1214" data-end="1291">
+		<li data-start="1214" data-end="1228">
+			<p data-start="1216" data-end="1228">Lancez MAMP.</p>
+		</li>
+		<li data-start="1229" data-end="1291">
+			<p data-start="1231" data-end="1291">Cliquez sur <strong data-start="1243" data-end="1260">Start Servers</strong> pour démarrer Apache et MySQL.</p>
+		</li>
+	</ul>
+	<h3 data-start="1293" data-end="1332">Étape 3 : Créer une base de données</h3>
+	<ul data-start="1334" data-end="1492">
+		<li data-start="1334" data-end="1400">
+			<p data-start="1336" data-end="1400">
+				Accédez à
+				<strong data-start="1346" data-end="1377"
+					><a data-start="1348" data-end="1375" rel="noopener" target="_new" class="decorated-link" href="http://localhost/phpmyadmin"
+						>http://localhost/phpmyadmin<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"
+							><svg
+								width="20"
+								height="20"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+								xmlns="http://www.w3.org/2000/svg"
+								data-rtl-flip=""
+								class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"
+							>
+								<path
+									d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"
+								></path></svg></span></a
+				></strong>
+				dans votre navigateur.
+			</p>
+		</li>
+		<li data-start="1401" data-end="1492">
+			<p data-start="1403" data-end="1492">
+				Cliquez sur <strong data-start="1415" data-end="1435">Bases de données</strong>, créez une nouvelle base, par exemple
+				<code data-start="1474" data-end="1491">wordpress_local</code>.
+			</p>
+		</li>
+	</ul>
+	<h3 data-start="1494" data-end="1542">Étape 4 : Télécharger et installer WordPress</h3>
+	<ul data-start="1544" data-end="1922">
+		<li data-start="1544" data-end="1656">
+			<p data-start="1546" data-end="1656">
+				Décompressez l’archive WordPress dans le dossier <code data-start="1595" data-end="1603">htdocs</code> de MAMP (ex:
+				<code data-start="1617" data-end="1654">/Applications/MAMP/htdocs/wordpress</code>).
+			</p>
+		</li>
+		<li data-start="1657" data-end="1700">
+			<p data-start="1659" data-end="1700">
+				Accédez à
+				<strong data-start="1669" data-end="1699"
+					><a data-start="1671" data-end="1697" rel="noopener" target="_new" class="decorated-link" href="http://localhost/wordpress"
+						>http://localhost/wordpress<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"
+							><svg
+								width="20"
+								height="20"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+								xmlns="http://www.w3.org/2000/svg"
+								data-rtl-flip=""
+								class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"
+							>
+								<path
+									d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"
+								></path></svg></span></a></strong
+				>.
+			</p>
+		</li>
+		<li data-start="1701" data-end="1855">
+			<p data-start="1703" data-end="1855">
+				Suivez l’assistant d’installation : renseignez la base de données (<code data-start="1770" data-end="1787">wordpress_local</code>), utilisateur
+				(<code data-start="1803" data-end="1809">root</code>), mot de passe (<code data-start="1826" data-end="1832">root</code> par défaut avec MAMP).
+			</p>
+		</li>
+		<li data-start="1856" data-end="1922">
+			<p data-start="1858" data-end="1922">Complétez les informations du site (titre, admin, mot de passe).</p>
+		</li>
+	</ul>
+	<hr data-start="1924" data-end="1927" />
+	<h2 data-start="1929" data-end="1965">4. Installer WordPress avec XAMPP</h2>
+	<h3 data-start="1967" data-end="2011">Étape 1 : Télécharger et installer XAMPP</h3>
+	<ul data-start="2013" data-end="2119">
+		<li data-start="2013" data-end="2071">
+			<p data-start="2015" data-end="2071">
+				Rendez-vous sur
+				<a data-start="2031" data-end="2071" rel="noopener" target="_new" class="decorated-link cursor-pointer"
+					>https://www.apachefriends.org/index.html<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"
+						><svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
+							data-rtl-flip=""
+							class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"
+						>
+							<path
+								d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"
+							></path></svg></span
+				></a>
+			</p>
+		</li>
+		<li data-start="2072" data-end="2119">
+			<p data-start="2074" data-end="2119">Téléchargez et installez XAMPP pour votre OS.</p>
+		</li>
+	</ul>
+	<h3 data-start="2121" data-end="2154">Étape 2 : Démarrer le serveur</h3>
+	<ul data-start="2156" data-end="2221">
+		<li data-start="2156" data-end="2185">
+			<p data-start="2158" data-end="2185">Lancez XAMPP Control Panel.</p>
+		</li>
+		<li data-start="2186" data-end="2221">
+			<p data-start="2188" data-end="2221">
+				Démarrez <strong data-start="2197" data-end="2207">Apache</strong> et <strong data-start="2211" data-end="2220">MySQL</strong>.
+			</p>
+		</li>
+	</ul>
+	<h3 data-start="2223" data-end="2262">Étape 3 : Créer une base de données</h3>
+	<ul data-start="2264" data-end="2339">
+		<li data-start="2264" data-end="2303">
+			<p data-start="2266" data-end="2303">Ouvrez <code data-start="2273" data-end="2302">http://localhost/phpmyadmin</code>.</p>
+		</li>
+		<li data-start="2304" data-end="2339">
+			<p data-start="2306" data-end="2339">Créez une base <code data-start="2321" data-end="2338">wordpress_local</code>.</p>
+		</li>
+	</ul>
+	<h3 data-start="2341" data-end="2374">Étape 4 : Installer WordPress</h3>
+	<ul data-start="2376" data-end="2606">
+		<li data-start="2376" data-end="2438">
+			<p data-start="2378" data-end="2438">Placez les fichiers WordPress dans <code data-start="2413" data-end="2437">xampp/htdocs/wordpress</code>.</p>
+		</li>
+		<li data-start="2439" data-end="2505">
+			<p data-start="2441" data-end="2505">
+				Visitez <code data-start="2449" data-end="2477">http://localhost/wordpress</code> pour lancer l’installation.
+			</p>
+		</li>
+		<li data-start="2506" data-end="2606">
+			<p data-start="2508" data-end="2606">
+				Configurez la connexion à la base de données (utilisateur <code data-start="2566" data-end="2572">root</code>, pas de mot de passe par défaut).
+			</p>
+		</li>
+	</ul>
+	<hr data-start="2608" data-end="2611" />
+	<h2 data-start="2613" data-end="2661">5. Installer WordPress avec Local by Flywheel</h2>
+	<h3 data-start="2663" data-end="2694">Étape 1 : Télécharger Local</h3>
+	<ul data-start="2696" data-end="2788">
+		<li data-start="2696" data-end="2740">
+			<p data-start="2698" data-end="2740">
+				Téléchargez Local sur
+				<a data-start="2720" data-end="2740" rel="noopener" target="_new" class="decorated-link cursor-pointer"
+					>https://localwp.com/<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"
+						><svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
+							data-rtl-flip=""
+							class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"
+						>
+							<path
+								d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"
+							></path></svg></span
+				></a>
+			</p>
+		</li>
+		<li data-start="2741" data-end="2788">
+			<p data-start="2743" data-end="2788">Installez-le comme une application classique.</p>
+		</li>
+	</ul>
+	<h3 data-start="2790" data-end="2825">Étape 2 : Créer un nouveau site</h3>
+	<ul data-start="2827" data-end="3003">
+		<li data-start="2827" data-end="2877">
+			<p data-start="2829" data-end="2877">Ouvrez Local, cliquez sur <strong data-start="2855" data-end="2876">Create a new site</strong>.</p>
+		</li>
+		<li data-start="2878" data-end="2902">
+			<p data-start="2880" data-end="2902">Donnez un nom au site.</p>
+		</li>
+		<li data-start="2903" data-end="2958">
+			<p data-start="2905" data-end="2958">Choisissez un environnement (recommandé : Preferred).</p>
+		</li>
+		<li data-start="2959" data-end="3003">
+			<p data-start="2961" data-end="3003">Indiquez vos identifiants admin WordPress.</p>
+		</li>
+	</ul>
+	<h3 data-start="3005" data-end="3038">Étape 3 : Utiliser votre site</h3>
+	<ul data-start="3040" data-end="3214">
+		<li data-start="3040" data-end="3117">
+			<p data-start="3042" data-end="3117">Local configure automatiquement le serveur, la base de données, PHP, MySQL.</p>
+		</li>
+		<li data-start="3118" data-end="3214">
+			<p data-start="3120" data-end="3214">
+				Cliquez sur <strong data-start="3132" data-end="3145">Open Site</strong> ou <strong data-start="3149" data-end="3158">Admin</strong> pour
+				accéder à votre site ou tableau de bord WordPress.
+			</p>
+		</li>
+	</ul>
+	<hr data-start="3216" data-end="3219" />
+	<h2 data-start="3221" data-end="3255">6. Conseils et bonnes pratiques</h2>
+	<ul data-start="3257" data-end="3542">
+		<li data-start="3257" data-end="3330">
+			<p data-start="3259" data-end="3330">Toujours utiliser une version récente de PHP compatible avec WordPress.</p>
+		</li>
+		<li data-start="3331" data-end="3423">
+			<p data-start="3333" data-end="3423">Ne pas oublier de sécuriser votre environnement local (notamment si accessible en réseau).</p>
+		</li>
+		<li data-start="3424" data-end="3474">
+			<p data-start="3426" data-end="3474">Sauvegarder régulièrement vos bases et fichiers.</p>
+		</li>
+		<li data-start="3475" data-end="3542">
+			<p data-start="3477" data-end="3542">Tester les plugins et thèmes avant de les déployer en production.</p>
+		</li>
+	</ul>
+</div>
