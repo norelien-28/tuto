@@ -130,3 +130,7 @@ footer a:hover::after,
 .markdown blockquote:after {
 	left: 0;
 }
+
+.small-text {
+	font-size: 0.875rem;
+}

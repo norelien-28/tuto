@@ -41,7 +41,7 @@ async function generateMenu() {
 					// Titre de sous-catégorie
 					const headerLi = document.createElement("li");
 					const header = document.createElement("h6");
-					header.className = "dropdown-header text-dark fw-bold";
+					header.className = "dropdown-header text-dark fw-bold pt-0 pb-1";
 					header.textContent = subcatValue.title || subcatKey;
 					headerLi.appendChild(header);
 					dropdownMenu.appendChild(headerLi);
@@ -50,7 +50,7 @@ async function generateMenu() {
 					subcatValue.articles.forEach((article) => {
 						const articleLi = document.createElement("li");
 						const articleA = document.createElement("a");
-						articleA.className = "dropdown-item";
+						articleA.className = "dropdown-item small-text lh-1";
 						articleA.href = buildArticleUrl(catKey, subcatKey, article.page);
 						articleA.textContent = `${article.page} - ${article.title}`;
 						articleLi.appendChild(articleA);
