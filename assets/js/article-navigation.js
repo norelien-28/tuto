@@ -75,7 +75,11 @@ async function generateArticleNavigation({ cat, subcat, page }) {
 		const navClone = navContainer.cloneNode(true); // true = clone profond
 		// ajout classes pour les boutons en haut de page
 		navClone.classList.remove("mt-4");
-		navClone.classList.add("my-4", "border-bottom", "border-secondaire", "pb-3");
+		// d-flex flex-column flex-md-row justify-content-between my-4 border-bottom border-secondary pb-3
+		// d-flex justify-content-between my-4 border-bottom border-secondaire pb-3
+		// navClone.classList.add("my-4", "border-bottom", "border-secondaire", "pb-3");
+		//  flex-column flex-md-row my-4 border-bottom border-secondary pb-3
+		navClone.classList.add("flex-column", "flex-md-row", "my-4", "border-bottom", "border-secondaire", "pb-3");
 
 		content.prepend(navClone);
 	} catch (e) {
@@ -95,7 +99,7 @@ async function generateBreadcrumb({ cat, subcat, page }) {
 	breadcrumbContainer.setAttribute("class", "mb-3 border-bottom border-secondaire");
 
 	const ol = document.createElement("ol");
-	ol.className = "breadcrumb small text-secondary";
+	ol.className = "breadcrumb small text-secondary text-small";
 
 	const liHome = document.createElement("li");
 	liHome.className = "breadcrumb-item";
@@ -229,13 +233,13 @@ function getCategoryLabel(data, cat, subcat) {
 function createNavButton(article, direction, isDark, data) {
 	const link = document.createElement("a");
 	link.href = buildArticleUrl(article.cat, article.subcat, article.page);
-	link.className = `btn ${isDark ? "btn-dark ms-auto text-end" : "btn-outline-dark text-start"}`;
+	link.className = `btn ${isDark ? "btn-dark ms-md-auto text-end" : "btn-outline-dark text-start  mb-3 mb-md-0"}`;
 
 	const labelClass = isDark ? "text-white-50" : "text-muted"; // meilleur contraste
 
 	link.innerHTML = `
-		<small class="d-block ${labelClass}">${getCategoryLabel(data, article.cat, article.subcat)}</small>
-		<strong>${direction === "prev" ? `← ${article.title}` : `${article.title} →`}</strong>
+		<small class="d-block ${labelClass} text-small-2">${getCategoryLabel(data, article.cat, article.subcat)}</small>
+		<strong class="text-small"	>${direction === "prev" ? `← ${article.title}` : `${article.title} →`}</strong>
 	`;
 
 	return link;

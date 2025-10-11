@@ -134,3 +134,12 @@ footer a:hover::after,
 .small-text {
 	font-size: 0.875rem;
 }
+
+@media (max-width: 767.98px) {
+	.text-small {
+		font-size: 0.9rem;
+	}
+	.text-small-2 {
+		font-size: 0.8rem;
+	}
+}
